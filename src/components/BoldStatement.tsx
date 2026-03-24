@@ -24,17 +24,6 @@ const BoldStatement = () => (
         Your agency handles one thing. Your developer handles another.
         Meanwhile, you're losing money.
       </motion.p>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.25 }}
-        className="font-body text-base text-background/40 max-w-[500px] mx-auto leading-relaxed"
-      >
-        Most businesses are sitting on untapped revenue — buried in broken processes,
-        disconnected tools, and digital experiences that underperform. I diagnose the
-        full stack and build what actually moves the needle.
-      </motion.p>
     </div>
   </section>
 );
