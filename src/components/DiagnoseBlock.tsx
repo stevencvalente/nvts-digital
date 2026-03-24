@@ -2,10 +2,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const paragraph =
-  "Most businesses are sitting on untapped revenue — buried in broken processes, disconnected tools, and digital experiences that underperform.";
+  "Most businesses are sitting on untapped revenue buried in broken processes, disconnected tools and digital experiences that underperform.";
 
-const highlight =
-  "I diagnose the full stack and build what actually moves the needle.";
+const highlight = "I diagnose the full stack and build what actually moves the needle.";
 
 const words = paragraph.split(" ");
 const highlightWords = highlight.split(" ");
@@ -19,10 +18,7 @@ const DiagnoseBlock = () => {
   });
 
   return (
-    <section
-      ref={containerRef}
-      className="py-32 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24"
-    >
+    <section ref={containerRef} className="py-32 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24">
       <div className="max-w-[900px] mx-auto">
         <p className="font-display text-[28px] md:text-[44px] lg:text-[56px] leading-[1.15] tracking-[-0.03em] font-semibold">
           {words.map((word, i) => {
@@ -40,13 +36,7 @@ const DiagnoseBlock = () => {
             const start = globalIndex / allWords.length;
             const end = (globalIndex + 1) / allWords.length;
             return (
-              <Word
-                key={`h-${i}`}
-                start={start}
-                end={end}
-                progress={scrollYProgress}
-                highlight
-              >
+              <Word key={`h-${i}`} start={start} end={end} progress={scrollYProgress} highlight>
                 {word}
               </Word>
             );
@@ -75,9 +65,7 @@ const Word = ({
   return (
     <motion.span
       style={{ opacity }}
-      className={`inline-block mr-[0.3em] ${
-        highlight ? "text-primary" : "text-foreground"
-      }`}
+      className={`inline-block mr-[0.3em] ${highlight ? "text-primary" : "text-foreground"}`}
     >
       {children}
     </motion.span>
