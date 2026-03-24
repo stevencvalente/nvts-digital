@@ -126,18 +126,21 @@ const accentColor: Record<string, string> = {
   cyan: "text-cyan",
   violet: "text-violet",
   lime: "text-lime",
+  amber: "text-amber-400",
 };
 
 const accentBg: Record<string, string> = {
   cyan: "bg-cyan/10",
   violet: "bg-violet/10",
   lime: "bg-lime/10",
+  amber: "bg-amber-400/10",
 };
 
 const accentBorder: Record<string, string> = {
   cyan: "border-cyan/40",
   violet: "border-violet/40",
   lime: "border-lime/40",
+  amber: "border-amber-400/40",
 };
 
 const ServicesSection = () => {
