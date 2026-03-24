@@ -10,8 +10,8 @@ const DiagnoseBlock = () => (
         transition={{ duration: 0.6 }}
         className="font-display text-2xl md:text-3xl lg:text-[32px] text-foreground leading-[1.6] tracking-tight"
       >
-        Most businesses are sitting on untapped revenue — buried in broken processes,
-        disconnected tools, and digital experiences that underperform.{" "}
+        Most businesses are sitting on untapped revenue — buried in broken processes, disconnected tools, and digital
+        experiences that underperform. <br />
         <span className="text-primary font-semibold">
           I diagnose the full stack and build what actually moves the needle.
         </span>
