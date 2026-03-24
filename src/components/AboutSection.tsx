@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import aboutPhoto from "@/assets/about-photo.png";
 
 const stats = [
   "10+ years experience",
@@ -14,9 +15,9 @@ const AboutSection = () => (
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="aspect-[4/5] bg-background border border-border rounded-2xl flex items-center justify-center"
+        className="aspect-[4/5] rounded-2xl overflow-hidden"
       >
-        <span className="text-muted-foreground/40 font-body text-sm">[ Photo ]</span>
+        <img src={aboutPhoto} alt="Digital transformation consultant" className="w-full h-full object-cover" />
       </motion.div>
 
       <motion.div
