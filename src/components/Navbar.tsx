@@ -26,7 +26,7 @@ const Navbar = () => {
       }`}
     >
       <a href="#" className="font-display font-bold text-lg tracking-tight text-foreground">
-        STUDIO<span className="text-primary">.</span>
+        NVTS<span className="text-primary"> DIGITAL</span>
       </a>
       <div className="flex items-center gap-8">
         {links.map((link) => (
