@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,42 +7,44 @@
 
 @layer base {
   :root {
-    --background: 228 12% 8%;
-    --foreground: 210 20% 92%;
+    --background: 0 0% 4%;
+    --foreground: 38 25% 93%;
 
-    --card: 228 12% 12%;
-    --card-foreground: 210 20% 92%;
+    --card: 0 0% 7%;
+    --card-foreground: 38 25% 93%;
 
-    --popover: 228 12% 12%;
-    --popover-foreground: 210 20% 92%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 38 25% 93%;
 
-    --primary: 185 100% 50%;
-    --primary-foreground: 228 12% 8%;
+    --primary: 73 89% 59%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 228 12% 16%;
-    --secondary-foreground: 210 20% 85%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 38 25% 93%;
 
-    --muted: 228 10% 18%;
-    --muted-foreground: 215 12% 55%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 53%;
 
-    --accent: 270 95% 65%;
-    --accent-foreground: 210 20% 95%;
+    --accent: 73 89% 59%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 228 10% 18%;
-    --input: 228 10% 18%;
-    --ring: 185 100% 50%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 73 89% 59%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --electric-cyan: 185 100% 50%;
-    --electric-violet: 270 95% 65%;
-    --electric-lime: 82 100% 55%;
+    --pillar-violet: 250 85% 70%;
+    --pillar-teal: 160 70% 48%;
+    --pillar-coral: 14 90% 59%;
+    --pillar-blue: 212 90% 59%;
+    --pillar-lime: 73 89% 59%;
 
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-display: 'Clash Display', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
   }
 }
 
@@ -60,29 +63,24 @@
   }
 
   ::selection {
-    background: hsl(185 100% 50% / 0.3);
-    color: hsl(210 20% 95%);
+    background: hsl(73 89% 59% / 0.3);
+    color: hsl(0 0% 4%);
   }
 }
 
 @layer utilities {
-  .text-gradient-cyan {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--electric-cyan)), hsl(var(--electric-violet)));
+  .marquee-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
   }
 
-  .text-gradient-lime {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--electric-lime)), hsl(var(--electric-cyan)));
+  .marquee-track:hover {
+    animation-play-state: paused;
   }
 
-  .border-glow {
-    border: 1px solid hsl(var(--electric-cyan) / 0.2);
-    box-shadow: 0 0 20px hsl(var(--electric-cyan) / 0.05), inset 0 0 20px hsl(var(--electric-cyan) / 0.02);
-  }
-
-  .glow-dot {
-    box-shadow: 0 0 10px hsl(var(--electric-cyan) / 0.6), 0 0 30px hsl(var(--electric-cyan) / 0.3);
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 }
 

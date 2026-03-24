@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Space Grotesk", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        display: ["Clash Display", "sans-serif"],
+        body: ["DM Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,9 +51,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cyan: "hsl(var(--electric-cyan))",
-        violet: "hsl(var(--electric-violet))",
-        lime: "hsl(var(--electric-lime))",
+        "pillar-violet": "hsl(var(--pillar-violet))",
+        "pillar-teal": "hsl(var(--pillar-teal))",
+        "pillar-coral": "hsl(var(--pillar-coral))",
+        "pillar-blue": "hsl(var(--pillar-blue))",
+        "pillar-lime": "hsl(var(--pillar-lime))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

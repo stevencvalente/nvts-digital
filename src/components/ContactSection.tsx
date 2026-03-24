@@ -1,89 +1,120 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Send } from "lucide-react";
-import { toast } from "sonner";
+import { Linkedin } from "lucide-react";
+
+const pillarOptions = [
+  "Data & Content Intelligence",
+  "Digital Experience",
+  "Growth & Acquisition",
+  "Digital Transformation",
+  "Artificial Intelligence",
+];
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", pillar: "", message: "" });
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
+    setSent(true);
+    setForm({ name: "", email: "", pillar: "", message: "" });
   };
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-16 lg:px-24">
-      <div className="max-w-3xl mx-auto">
+    <section id="contact" className="bg-card border-t border-border py-24 md:py-32 px-6 md:px-16 lg:px-24">
+      <div className="max-w-xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-10"
         >
-          <p className="text-primary text-sm tracking-[0.3em] uppercase mb-4 font-body">Get in touch</p>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Let's build something
-            <br />
-            <span className="text-gradient-cyan">extraordinary.</span>
+          <h2 className="font-display font-semibold text-4xl md:text-[52px] text-foreground tracking-tight mb-4">
+            Got a project in mind?
           </h2>
-          <p className="text-muted-foreground font-body max-w-md mx-auto">
-            Have a project in mind? I'd love to hear about it. Drop me a message and let's start the conversation.
+          <p className="font-body text-lg text-muted-foreground">
+            Let's build something that actually performs.
           </p>
         </motion.div>
 
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          onSubmit={handleSubmit}
-          className="space-y-6"
-        >
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-display font-medium mb-2 text-foreground/80">Name</label>
-              <input
-                type="text"
-                required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full bg-secondary/50 border border-border px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-display font-medium mb-2 text-foreground/80">Email</label>
-              <input
-                type="email"
-                required
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full bg-secondary/50 border border-border px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                placeholder="you@example.com"
-              />
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-display font-medium mb-2 text-foreground/80">Message</label>
+        {sent ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-secondary border border-border rounded-xl p-10 text-center"
+          >
+            <p className="font-display font-medium text-foreground text-lg mb-2">
+              Message sent.
+            </p>
+            <p className="text-muted-foreground font-body text-sm">
+              I'll be in touch shortly.
+            </p>
+          </motion.div>
+        ) : (
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            onSubmit={handleSubmit}
+            className="space-y-5"
+          >
+            <input
+              type="text"
+              required
+              placeholder="Name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200"
+            />
+            <input
+              type="email"
+              required
+              placeholder="Email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200"
+            />
+            <select
+              required
+              value={form.pillar}
+              onChange={(e) => setForm({ ...form, pillar: e.target.value })}
+              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors duration-200 appearance-none"
+            >
+              <option value="" disabled>
+                Pillar of interest
+              </option>
+              {pillarOptions.map((p) => (
+                <option key={p} value={p}>
+                  {p}
+                </option>
+              ))}
+            </select>
             <textarea
               required
-              rows={6}
+              rows={4}
+              placeholder="Message"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full bg-secondary/50 border border-border px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-              placeholder="Tell me about your project..."
+              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200 resize-none"
             />
-          </div>
-          <button
-            type="submit"
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 font-display font-semibold text-sm tracking-wider uppercase hover:bg-primary/90 transition-colors"
-          >
-            Send message
-            <Send className="w-4 h-4" />
-          </button>
-        </motion.form>
+            <button
+              type="submit"
+              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-lg hover:scale-[1.01] transition-transform duration-200"
+            >
+              Send Message
+            </button>
+          </motion.form>
+        )}
+
+        {/* Bottom info */}
+        <div className="flex items-center justify-center gap-4 mt-10 text-muted-foreground text-sm font-body">
+          <span>hello@nvtsdigital.com</span>
+          <a href="#" className="hover:text-primary transition-colors duration-200">
+            <Linkedin className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     </section>
   );
