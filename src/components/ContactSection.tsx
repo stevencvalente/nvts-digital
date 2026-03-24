@@ -40,14 +40,30 @@ const ContactSection = () => {
 
     try {
       const id = crypto.randomUUID();
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "contact-confirmation",
-          recipientEmail: result.data.email,
-          idempotencyKey: `contact-confirm-${id}`,
-          templateData: { name: result.data.name },
-        },
-      });
+      // Send both emails in parallel: notification to owner + confirmation to sender
+      await Promise.all([
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "contact-notification",
+            recipientEmail: "info@nvtsdigital.com",
+            idempotencyKey: `contact-notify-${id}`,
+            templateData: {
+              name: result.data.name,
+              email: result.data.email,
+              pillar: result.data.pillar,
+              message: result.data.message,
+            },
+          },
+        }),
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "contact-confirmation",
+            recipientEmail: result.data.email,
+            idempotencyKey: `contact-confirm-${id}`,
+            templateData: { name: result.data.name },
+          },
+        }),
+      ]);
       setSent(true);
       setForm({ name: "", email: "", pillar: "", message: "" });
       toast.success(t.contact.successToast);
