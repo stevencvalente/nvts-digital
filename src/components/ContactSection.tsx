@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Linkedin } from "lucide-react";
+import { z } from "zod";
+import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const pillarOptions = [
   "Data & Content Intelligence",
@@ -10,14 +13,59 @@ const pillarOptions = [
   "Artificial Intelligence",
 ];
 
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
+  email: z.string().trim().email("Please enter a valid email").max(255, "Email must be under 255 characters"),
+  pillar: z.string().min(1, "Please select a pillar of interest"),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be under 2000 characters"),
+});
+
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", pillar: "", message: "" });
+  const [honeypot, setHoneypot] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", pillar: "", message: "" });
+
+    // Honeypot check — bots fill hidden fields
+    if (honeypot) return;
+
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) fieldErrors[err.path[0] as string] = err.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setErrors({});
+    setSending(true);
+
+    try {
+      const id = crypto.randomUUID();
+
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-confirmation",
+          recipientEmail: result.data.email,
+          idempotencyKey: `contact-confirm-${id}`,
+          templateData: { name: result.data.name },
+        },
+      });
+
+      setSent(true);
+      setForm({ name: "", email: "", pillar: "", message: "" });
+      toast.success("Message sent successfully!");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -56,46 +104,70 @@ const ContactSection = () => {
             onSubmit={handleSubmit}
             className="space-y-5"
           >
-            <input
-              type="text"
-              required
-              placeholder="Name"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-            />
-            <input
-              type="email"
-              required
-              placeholder="Email"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-            />
-            <select
-              required
-              value={form.pillar}
-              onChange={(e) => setForm({ ...form, pillar: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors appearance-none"
-            >
-              <option value="" disabled>Pillar of interest</option>
-              {pillarOptions.map((p) => (
-                <option key={p} value={p}>{p}</option>
-              ))}
-            </select>
-            <textarea
-              required
-              rows={4}
-              placeholder="Message"
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-            />
+            {/* Honeypot — hidden from real users, bots fill it */}
+            <div className="absolute opacity-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
+              <input
+                type="text"
+                name="website"
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+              />
+            </div>
+
+            <div>
+              <input
+                type="text"
+                placeholder="Name"
+                maxLength={100}
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+              />
+              {errors.name && <p className="text-destructive text-xs font-body mt-1.5">{errors.name}</p>}
+            </div>
+            <div>
+              <input
+                type="email"
+                placeholder="Email"
+                maxLength={255}
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+              />
+              {errors.email && <p className="text-destructive text-xs font-body mt-1.5">{errors.email}</p>}
+            </div>
+            <div>
+              <select
+                value={form.pillar}
+                onChange={(e) => setForm({ ...form, pillar: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors appearance-none"
+              >
+                <option value="" disabled>Pillar of interest</option>
+                {pillarOptions.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
+              {errors.pillar && <p className="text-destructive text-xs font-body mt-1.5">{errors.pillar}</p>}
+            </div>
+            <div>
+              <textarea
+                rows={4}
+                placeholder="Message"
+                maxLength={2000}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+              />
+              {errors.message && <p className="text-destructive text-xs font-body mt-1.5">{errors.message}</p>}
+            </div>
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-xl hover:bg-primary/90 transition-all duration-200"
+              disabled={sending}
+              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-xl hover:bg-primary/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send Message
+              {sending ? "Sending..." : "Send Message"}
             </button>
           </motion.form>
         )}
