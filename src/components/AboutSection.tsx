@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import aboutPhoto from "@/assets/about-photo.png";
 
-const stats = [
-  "10+ years experience",
-  "30+ projects delivered",
-  "5 pillars of expertise",
-];
+const stats = ["10+ years experience", "30+ projects delivered", "5 pillars of expertise"];
 
 const AboutSection = () => (
   <section id="about" className="py-24 md:py-32 px-6 md:px-16 lg:px-24 bg-secondary/50">
@@ -26,17 +22,14 @@ const AboutSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.15 }}
       >
-        <p className="text-primary text-xs font-body uppercase tracking-[0.2em] mb-4 font-medium">
-          About
-        </p>
+        <p className="text-primary text-xs font-body uppercase tracking-[0.2em] mb-4 font-medium">About</p>
         <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground tracking-tight mb-6">
           One consultant. Full-stack expertise.
         </h2>
         <p className="text-muted-foreground font-body text-base leading-[1.8] mb-8">
-          With over 10 years in digital consulting, I've helped companies across e-commerce,
-          retail, and B2B transform the way they operate, grow, and compete. I work across the
-          full digital stack — from data architecture to customer experience, from AI strategy
-          to paid acquisition — so nothing falls through the cracks.
+          With over 10 years in digital consulting, I've helped companies across e-commerce, retail, and B2B transform
+          the way they operate, grow and compete. I work across the full digital stack from data architecture to
+          customer experience, from AI strategy to paid acquisition so nothing falls through the cracks.
         </p>
 
         <div className="flex flex-wrap gap-3">
