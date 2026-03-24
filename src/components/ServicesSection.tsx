@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Package, FolderOpen, Users, Globe, Smartphone, Megaphone, Bot, MessageSquare, Brain } from "lucide-react";
+import { Package, FolderOpen, Users, Globe, Smartphone, Megaphone, Bot, MessageSquare, Brain, ShoppingCart, BarChart3, LineChart, Search } from "lucide-react";
 
 const services = [
   {
