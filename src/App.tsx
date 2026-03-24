@@ -8,6 +8,17 @@ import Index from "./pages/Index";
 import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
 
+const SUPPORTED_LOCALES = ["en", "pt", "fr"] as const;
+
+const detectLocale = (): string => {
+  const langs = navigator.languages ?? [navigator.language];
+  for (const lang of langs) {
+    const code = lang.toLowerCase().split("-")[0];
+    if ((SUPPORTED_LOCALES as readonly string[]).includes(code)) return code;
+  }
+  return "en";
+};
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -17,8 +28,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Redirect root to /en */}
-          <Route path="/" element={<Navigate to="/en" replace />} />
+          <Route path="/" element={<Navigate to={`/${detectLocale()}`} replace />} />
           
           {/* Locale-prefixed routes */}
           <Route path="/:lang" element={<LocaleLayout />}>
