@@ -1,36 +1,51 @@
 import { motion } from "framer-motion";
-import { Lightbulb, TrendingUp, Shield, Code, BarChart3, Zap } from "lucide-react";
+import { Package, FolderOpen, Users, Globe, Smartphone, Megaphone, Bot, MessageSquare, Brain } from "lucide-react";
 
 const services = [
   {
-    icon: Lightbulb,
-    title: "Digital Strategy",
-    description: "Roadmaps that align technology with business objectives for lasting competitive advantage.",
+    icon: Package,
+    title: "PIM",
+    tagline: "Launch products 30% faster. Cut returns by 17%. Triple-digit ROI within 2 years.",
   },
   {
-    icon: TrendingUp,
-    title: "Growth & Transformation",
-    description: "Scaling organizations through data-driven frameworks and operational excellence.",
+    icon: FolderOpen,
+    title: "DAM",
+    tagline: "Save 30% of your team's week. Cut asset costs by 68%. Average 310% ROI.",
   },
   {
-    icon: Shield,
-    title: "Cybersecurity Advisory",
-    description: "Risk assessments, compliance strategies, and resilience planning for critical infrastructure.",
+    icon: Users,
+    title: "CRM",
+    tagline: "$8.71 back for every $1 spent. +29% revenue. +300% lead conversion.",
   },
   {
-    icon: Code,
-    title: "Technology Architecture",
-    description: "Designing robust systems that adapt to evolving needs and emerging technologies.",
+    icon: Globe,
+    title: "WebGL Website",
+    tagline: "47% more engagement. 94% of first impressions are design. Stand out or blend in.",
   },
   {
-    icon: BarChart3,
-    title: "Data & Analytics",
-    description: "Turning raw data into actionable intelligence for smarter decision-making.",
+    icon: Smartphone,
+    title: "Mobile App",
+    tagline: "App users convert 11× more. Buy 33% more often. Revenue up 15–25%.",
   },
   {
-    icon: Zap,
-    title: "Innovation Workshops",
-    description: "Facilitating ideation sprints that unlock creative solutions for complex challenges.",
+    icon: Megaphone,
+    title: "Paid Campaigns",
+    tagline: "Up to $8 back per $1 spent. 5:1 average ROAS. Every click, optimized.",
+  },
+  {
+    icon: Bot,
+    title: "AI Process Automation",
+    tagline: "Cut processing time by 75%. Reduce errors by 85%. ROI of 150–300% in year one.",
+  },
+  {
+    icon: MessageSquare,
+    title: "AI Chatbot / Assistant",
+    tagline: "Handle 80% of queries automatically. Reply in seconds, not hours. $3.50 back per $1 spent.",
+  },
+  {
+    icon: Brain,
+    title: "AI — Full Stack",
+    tagline: "Automate 80% of routine work. 75% faster processing. Up to 300% ROI in 12 months.",
   },
 ];
 
@@ -64,7 +79,7 @@ const ServicesSection = () => {
               <service.icon className="w-6 h-6 text-primary mb-6 group-hover:text-lime transition-colors duration-500" />
               <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                {service.description}
+                {service.tagline}
               </p>
             </motion.div>
           ))}
