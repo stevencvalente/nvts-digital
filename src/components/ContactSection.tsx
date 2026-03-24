@@ -21,7 +21,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="bg-card border-t border-border py-24 md:py-32 px-6 md:px-16 lg:px-24">
+    <section id="contact" className="py-24 md:py-32 px-6 md:px-16 lg:px-24">
       <div className="max-w-xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,14 +42,10 @@ const ContactSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-secondary border border-border rounded-xl p-10 text-center"
+            className="bg-secondary border border-border rounded-2xl p-10 text-center"
           >
-            <p className="font-display font-medium text-foreground text-lg mb-2">
-              Message sent.
-            </p>
-            <p className="text-muted-foreground font-body text-sm">
-              I'll be in touch shortly.
-            </p>
+            <p className="font-display font-medium text-foreground text-lg mb-2">Message sent.</p>
+            <p className="text-muted-foreground font-body text-sm">I'll be in touch shortly.</p>
           </motion.div>
         ) : (
           <motion.form
@@ -66,7 +62,7 @@ const ContactSection = () => {
               placeholder="Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200"
+              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
             />
             <input
               type="email"
@@ -74,21 +70,17 @@ const ContactSection = () => {
               placeholder="Email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200"
+              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
             />
             <select
               required
               value={form.pillar}
               onChange={(e) => setForm({ ...form, pillar: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors duration-200 appearance-none"
+              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors appearance-none"
             >
-              <option value="" disabled>
-                Pillar of interest
-              </option>
+              <option value="" disabled>Pillar of interest</option>
               {pillarOptions.map((p) => (
-                <option key={p} value={p}>
-                  {p}
-                </option>
+                <option key={p} value={p}>{p}</option>
               ))}
             </select>
             <textarea
@@ -97,18 +89,17 @@ const ContactSection = () => {
               placeholder="Message"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full bg-secondary border border-border rounded-lg px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200 resize-none"
+              className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
             />
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-lg hover:scale-[1.01] transition-transform duration-200"
+              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-xl hover:bg-primary/90 transition-all duration-200"
             >
               Send Message
             </button>
           </motion.form>
         )}
 
-        {/* Bottom info */}
         <div className="flex items-center justify-center gap-4 mt-10 text-muted-foreground text-sm font-body">
           <span>hello@nvtsdigital.com</span>
           <a href="#" className="hover:text-primary transition-colors duration-200">
