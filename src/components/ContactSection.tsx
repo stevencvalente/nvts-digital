@@ -91,7 +91,11 @@ const ContactSection = () => {
         </motion.div>
 
         {sent ? (
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-secondary border border-border rounded-2xl p-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-secondary border border-border rounded-2xl p-10 text-center"
+          >
             <p className="font-display font-medium text-foreground text-lg mb-2">{t.contact.sentTitle}</p>
             <p className="text-muted-foreground font-body text-sm">{t.contact.sentSubtitle}</p>
           </motion.div>
@@ -105,46 +109,78 @@ const ContactSection = () => {
             className="space-y-5"
           >
             <div className="absolute opacity-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
-              <input type="text" name="website" autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} />
+              <input
+                type="text"
+                name="website"
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+              />
             </div>
 
             <div>
-              <input type="text" placeholder={t.contact.namePlaceholder} maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors" />
+              <input
+                type="text"
+                placeholder={t.contact.namePlaceholder}
+                maxLength={100}
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+              />
               {errors.name && <p className="text-destructive text-xs font-body mt-1.5">{errors.name}</p>}
             </div>
             <div>
-              <input type="email" placeholder={t.contact.emailPlaceholder} maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors" />
+              <input
+                type="email"
+                placeholder={t.contact.emailPlaceholder}
+                maxLength={255}
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+              />
               {errors.email && <p className="text-destructive text-xs font-body mt-1.5">{errors.email}</p>}
             </div>
             <div>
-              <select value={form.pillar} onChange={(e) => setForm({ ...form, pillar: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors appearance-none">
-                <option value="" disabled>{t.contact.pillarPlaceholder}</option>
+              <select
+                value={form.pillar}
+                onChange={(e) => setForm({ ...form, pillar: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors appearance-none"
+              >
+                <option value="" disabled>
+                  {t.contact.pillarPlaceholder}
+                </option>
                 {t.services.pillars.map((p) => (
-                  <option key={p.title} value={p.title}>{p.title}</option>
+                  <option key={p.title} value={p.title}>
+                    {p.title}
+                  </option>
                 ))}
               </select>
               {errors.pillar && <p className="text-destructive text-xs font-body mt-1.5">{errors.pillar}</p>}
             </div>
             <div>
-              <textarea rows={4} placeholder={t.contact.messagePlaceholder} maxLength={2000} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none" />
+              <textarea
+                rows={4}
+                placeholder={t.contact.messagePlaceholder}
+                maxLength={2000}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+              />
               {errors.message && <p className="text-destructive text-xs font-body mt-1.5">{errors.message}</p>}
             </div>
-            <button type="submit" disabled={sending}
-              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-xl hover:bg-primary/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed">
+            <button
+              type="submit"
+              disabled={sending}
+              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-xl hover:bg-primary/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+            >
               {sending ? t.contact.sendingButton : t.contact.sendButton}
             </button>
           </motion.form>
         )}
 
         <div className="flex items-center justify-center gap-4 mt-10 text-muted-foreground text-sm font-body">
-          <span>hello@nvtsdigital.com</span>
-          <a href="#" className="hover:text-primary transition-colors duration-200">
-            <Linkedin className="w-4 h-4" />
-          </a>
+          <span>info@nvtsdigital.com</span>
         </div>
       </div>
     </section>
