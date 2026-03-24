@@ -68,6 +68,38 @@ const useHeadMeta = () => {
       document.head.appendChild(canonical);
     }
     canonical.href = `${SITE_URL}/${locale}`;
+
+    // JSON-LD Organization structured data
+    const JSON_LD_ID = "json-ld-organization";
+    let scriptEl = document.getElementById(JSON_LD_ID) as HTMLScriptElement | null;
+    if (!scriptEl) {
+      scriptEl = document.createElement("script");
+      scriptEl.id = JSON_LD_ID;
+      scriptEl.type = "application/ld+json";
+      document.head.appendChild(scriptEl);
+    }
+    scriptEl.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "NVTS Digital",
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.ico`,
+      description,
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "hello@nvtsdigital.com",
+        contactType: "customer service",
+        availableLanguage: ["English", "Portuguese", "French"],
+      },
+      sameAs: [],
+      knowsAbout: [
+        "Digital Transformation",
+        "Data & Content Intelligence",
+        "E-Commerce",
+        "Growth & Acquisition",
+        "Artificial Intelligence",
+      ],
+    });
   }, [locale]);
 };
 
