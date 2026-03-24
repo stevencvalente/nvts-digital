@@ -16,8 +16,18 @@ const BoldStatement = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="font-body text-base text-primary-foreground/80 max-w-[480px] mx-auto leading-relaxed"
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="font-body text-base text-primary-foreground/80 max-w-[560px] mx-auto leading-relaxed mb-4"
+      >
+        Your agency handles one thing. Your developer handles another.
+        Meanwhile, you're losing money.
+      </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="font-body text-base text-primary-foreground/60 max-w-[480px] mx-auto leading-relaxed"
       >
         Most businesses are sitting on untapped revenue — buried in broken processes,
         disconnected tools, and digital experiences that underperform. I diagnose the
