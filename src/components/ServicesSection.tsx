@@ -201,13 +201,13 @@ const ServicesSection = () => {
 
                         {/* CTA hint */}
                         {isActive && (
-                          <motion.p
+                          <motion.span
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            className="mt-5 text-primary font-display font-medium text-sm"
+                            className="mt-5 inline-block bg-primary text-primary-foreground font-display font-medium text-sm px-6 py-2.5 rounded-full"
                           >
                             Click to explore →
-                          </motion.p>
+                          </motion.span>
                         )}
                       </div>
                     </div>
