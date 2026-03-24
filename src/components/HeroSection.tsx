@@ -1,14 +1,6 @@
 import { motion } from "framer-motion";
 
-const services = [
-  "PIM", "DAM", "Data Analytics", "WebGL/WebGPU", "Mobile Apps", "E-Commerce",
-  "CRM", "Paid Campaigns", "SEO", "Marketing Strategy", "Digital Transformation",
-  "AI Automation", "AI Chatbot", "Predictive Analytics", "Conversational AI",
-];
-
 const HeroSection = () => {
-  const marqueeContent = services.map((s) => `${s}  ·  `).join("");
-
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24">
       <div className="max-w-3xl relative z-10 pt-24">
@@ -53,18 +45,6 @@ const HeroSection = () => {
           </a>
         </motion.div>
       </div>
-
-      {/* Marquee strip */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
-        className="absolute bottom-0 left-0 right-0 border-t border-b border-border overflow-hidden py-4"
-      >
-        <div className="marquee-track whitespace-nowrap text-sm font-body text-muted-foreground">
-          <span>{marqueeContent}{marqueeContent}</span>
-        </div>
-      </motion.div>
     </section>
   );
 };
