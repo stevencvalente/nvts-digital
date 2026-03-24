@@ -51,11 +51,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        "pillar-violet": "hsl(var(--pillar-violet))",
-        "pillar-teal": "hsl(var(--pillar-teal))",
-        "pillar-coral": "hsl(var(--pillar-coral))",
-        "pillar-blue": "hsl(var(--pillar-blue))",
-        "pillar-lime": "hsl(var(--pillar-lime))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

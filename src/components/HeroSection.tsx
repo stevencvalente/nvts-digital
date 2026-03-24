@@ -7,21 +7,19 @@ const services = [
 ];
 
 const HeroSection = () => {
-  const marqueeContent = services.map((s) => `${s} · `).join("");
+  const marqueeContent = services.map((s) => `${s}  ·  `).join("");
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24">
-      <div className="max-w-4xl relative z-10 pt-24">
+      <div className="max-w-3xl relative z-10 pt-24">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-display font-semibold text-[40px] md:text-[72px] leading-[1.05] tracking-tight text-foreground mb-8"
+          className="font-display font-semibold text-[36px] md:text-[64px] leading-[1.08] tracking-tight text-foreground mb-8"
         >
-          Your agency handles one thing.
-          <br />
-          Your developer handles another.
-          <br />
+          Your agency handles one thing.{" "}
+          Your developer handles another.{" "}
           <span className="text-primary">Meanwhile, you're losing money.</span>
         </motion.h1>
 
@@ -43,13 +41,13 @@ const HeroSection = () => {
         >
           <a
             href="#services"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 font-display font-medium text-sm rounded-lg hover:scale-[1.02] transition-transform duration-200"
+            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 font-display font-medium text-sm rounded-lg hover:bg-primary/90 transition-all duration-200"
           >
             Discover My Services
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center border border-primary text-primary px-8 py-4 font-display font-medium text-sm rounded-lg hover:bg-primary/10 transition-colors duration-200"
+            className="inline-flex items-center justify-center border border-foreground/20 text-foreground px-8 py-4 font-display font-medium text-sm rounded-lg hover:border-primary hover:text-primary transition-all duration-200"
           >
             Let's Talk
           </a>

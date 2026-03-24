@@ -17,7 +17,7 @@ const BoldStatement = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="font-body text-base text-primary-foreground/70 max-w-[480px] mx-auto leading-relaxed"
+        className="font-body text-base text-primary-foreground/80 max-w-[480px] mx-auto leading-relaxed"
       >
         Most businesses are sitting on untapped revenue — buried in broken processes,
         disconnected tools, and digital experiences that underperform. I diagnose the
