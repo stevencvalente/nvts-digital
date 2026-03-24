@@ -1,8 +1,25 @@
 import { motion } from "framer-motion";
 
+const floatingCards = [
+  { label: "Revenue Uplift", value: "+34%", x: 20, y: 140, delay: 0.8 },
+  { label: "Conversion Rate", value: "4.8×", x: -40, y: 320, delay: 1.1 },
+  { label: "Time to Market", value: "-60%", x: 30, y: 500, delay: 1.4 },
+  { label: "ROI", value: "12×", x: -20, y: 680, delay: 1.0 },
+];
+
+const float = (i: number) => ({
+  y: [0, -12, 0, 8, 0],
+  x: [0, i % 2 === 0 ? 6 : -6, 0],
+  transition: {
+    duration: 5 + i * 0.7,
+    repeat: Infinity,
+    ease: "easeInOut",
+  },
+});
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden">
       <div className="max-w-4xl relative z-10 pt-24">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -45,6 +62,32 @@ const HeroSection = () => {
             Let's Talk
           </a>
         </motion.div>
+      </div>
+
+      {/* Floating metric cards — right side */}
+      <div className="hidden lg:block absolute right-12 xl:right-24 top-1/2 -translate-y-1/2 w-[220px] z-0">
+        {floatingCards.map((card, i) => (
+          <motion.div
+            key={card.label}
+            initial={{ opacity: 0, scale: 0.8, x: 60 }}
+            animate={{ opacity: 1, scale: 1, x: card.x }}
+            transition={{ duration: 0.7, delay: card.delay, ease: "easeOut" }}
+            style={{ top: card.y }}
+            className="absolute w-full"
+          >
+            <motion.div
+              animate={float(i)}
+              className="bg-card/80 backdrop-blur-md border border-border/60 rounded-xl px-5 py-4 shadow-[0_8px_30px_-12px_hsl(var(--foreground)/0.08)]"
+            >
+              <p className="text-muted-foreground text-xs font-body tracking-wide uppercase mb-1">
+                {card.label}
+              </p>
+              <p className="font-display text-2xl font-semibold text-foreground">
+                {card.value}
+              </p>
+            </motion.div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
