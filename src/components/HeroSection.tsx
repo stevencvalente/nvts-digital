@@ -47,55 +47,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Vertical power line — right side */}
-      <div className="hidden lg:flex absolute right-16 xl:right-28 top-0 bottom-0 items-center z-0">
-        <div className="relative h-[70%] w-px">
-          {/* Base line */}
-          <div className="absolute inset-0 w-px bg-border/40" />
-
-          {/* Animated glow traveling down */}
-          <motion.div
-            className="absolute left-1/2 -translate-x-1/2 w-[3px] h-32 rounded-full"
-            style={{
-              background:
-                "linear-gradient(180deg, transparent 0%, hsl(var(--primary)) 40%, hsl(var(--primary)) 60%, transparent 100%)",
-              boxShadow: "0 0 20px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.2)",
-            }}
-            animate={{ top: ["-10%", "110%"] }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 0.5,
-            }}
-          />
-
-          {/* Pulse nodes along the line */}
-          {[0.15, 0.4, 0.65, 0.88].map((pos, i) => (
-            <motion.div
-              key={i}
-              className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary"
-              style={{ top: `${pos * 100}%` }}
-              initial={{ opacity: 0.3, scale: 0.8 }}
-              animate={{
-                opacity: [0.3, 1, 0.3],
-                scale: [0.8, 1.4, 0.8],
-                boxShadow: [
-                  "0 0 0px hsl(var(--primary) / 0)",
-                  "0 0 16px hsl(var(--primary) / 0.6)",
-                  "0 0 0px hsl(var(--primary) / 0)",
-                ],
-              }}
-              transition={{
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: pos * 3.5,
-              }}
-            />
-          ))}
-        </div>
-      </div>
     </section>
   );
 };
