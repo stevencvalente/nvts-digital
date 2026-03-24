@@ -47,6 +47,26 @@ const services = [
     title: "AI — Full Stack",
     tagline: "Automate 80% of routine work. 75% faster processing. Up to 300% ROI in 12 months.",
   },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce",
+    tagline: "70% of carts are abandoned. Top stores convert at 11%+. The gap is pure lost revenue — I close it.",
+  },
+  {
+    icon: BarChart3,
+    title: "Marketing Strategy",
+    tagline: "Data-driven strategies deliver 5–8% more ROI. Email returns $42 per $1. Every channel, optimized.",
+  },
+  {
+    icon: LineChart,
+    title: "Data Analytics",
+    tagline: "54% of companies using analytics report above-average profits. Most still fly blind. You won't.",
+  },
+  {
+    icon: Search,
+    title: "SEO",
+    tagline: "$7.48 back per $1 spent. SEO leads close 8.5× more. Organic search drives 44% of all B2B revenue.",
+  },
 ];
 
 const ServicesSection = () => {
