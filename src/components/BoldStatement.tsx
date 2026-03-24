@@ -1,31 +1,59 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-const BoldStatement = () => (
-  <section className="bg-foreground py-24 md:py-32 px-6">
-    <div className="max-w-5xl mx-auto text-center">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="font-display font-semibold text-[36px] md:text-[64px] lg:text-[72px] text-background leading-[1.05] tracking-tight mb-10"
-      >
-        I don't consult.
-        <br />
-        <span className="text-primary">I transform.</span>
-      </motion.h2>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="font-body text-lg md:text-xl text-background/60 max-w-[580px] mx-auto leading-relaxed mb-4"
-      >
-        Your agency handles one thing. Your developer handles another.
-        Meanwhile, you're losing money.
-      </motion.p>
-    </div>
-  </section>
-);
+const BoldStatement = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const headingY = useTransform(scrollYProgress, [0, 1], [60, -60]);
+  const headingScale = useTransform(scrollYProgress, [0.1, 0.4], [0.92, 1]);
+  const headingOpacity = useTransform(scrollYProgress, [0.05, 0.25, 0.75, 0.95], [0, 1, 1, 0]);
+
+  const subtitleY = useTransform(scrollYProgress, [0, 1], [80, -40]);
+  const subtitleOpacity = useTransform(scrollYProgress, [0.12, 0.32, 0.7, 0.9], [0, 1, 1, 0]);
+
+  const orbX1 = useTransform(scrollYProgress, [0, 1], ["-30%", "50%"]);
+  const orbY1 = useTransform(scrollYProgress, [0, 1], ["20%", "60%"]);
+  const orbX2 = useTransform(scrollYProgress, [0, 1], ["30%", "-30%"]);
+  const orbY2 = useTransform(scrollYProgress, [0, 1], ["70%", "20%"]);
+  const orbOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.2, 0.5, 0.5, 0.2]);
+
+  return (
+    <section ref={containerRef} className="relative bg-foreground py-32 md:py-48 lg:py-56 px-6 overflow-hidden">
+      {/* Parallax gradient orbs */}
+      <motion.div className="absolute inset-0 pointer-events-none" style={{ opacity: orbOpacity }}>
+        <motion.div
+          className="absolute w-[500px] h-[500px] rounded-full blur-[120px] bg-primary/30"
+          style={{ x: orbX1, y: orbY1 }}
+        />
+        <motion.div
+          className="absolute right-0 w-[350px] h-[350px] rounded-full blur-[100px] bg-accent/20"
+          style={{ x: orbX2, y: orbY2 }}
+        />
+      </motion.div>
+
+      <div className="max-w-5xl mx-auto text-center relative z-10">
+        <motion.h2
+          className="font-display font-semibold text-[36px] md:text-[64px] lg:text-[72px] text-background leading-[1.05] tracking-tight mb-10"
+          style={{ y: headingY, scale: headingScale, opacity: headingOpacity }}
+        >
+          I don't consult.
+          <br />
+          <span className="text-primary">I transform.</span>
+        </motion.h2>
+        <motion.p
+          className="font-body text-lg md:text-xl text-background/60 max-w-[580px] mx-auto leading-relaxed mb-4"
+          style={{ y: subtitleY, opacity: subtitleOpacity }}
+        >
+          Your agency handles one thing. Your developer handles another.
+          Meanwhile, you're losing money.
+        </motion.p>
+      </div>
+    </section>
+  );
+};
 
 export default BoldStatement;
