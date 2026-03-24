@@ -1,10 +1,11 @@
 const Footer = () => (
-  <footer className="border-t border-border py-10 px-6 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground font-body">
-    <p>© {new Date().getFullYear()} NVTS Digital. All rights reserved.</p>
-    <div className="flex gap-6">
-      <a href="#" className="hover:text-foreground transition-colors">LinkedIn</a>
-      <a href="#" className="hover:text-foreground transition-colors">Twitter</a>
-      <a href="#" className="hover:text-foreground transition-colors">Email</a>
+  <footer className="border-t border-border py-6 px-6 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-3 text-[13px] text-muted-foreground font-body">
+    <span>NVTS Digital</span>
+    <div className="flex items-center gap-6">
+      <span>© 2025</span>
+      <a href="#services" className="hover:text-primary transition-colors duration-200">Services</a>
+      <a href="#about" className="hover:text-primary transition-colors duration-200">About</a>
+      <a href="#contact" className="hover:text-primary transition-colors duration-200">Contact</a>
     </div>
   </footer>
 );
