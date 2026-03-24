@@ -169,7 +169,7 @@ const ServicesSection = () => {
             What I do
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Four pillars.{" "}
+            Five pillars.{" "}
             <span className="text-gradient-cyan">One vision.</span>
           </h2>
         </motion.div>
