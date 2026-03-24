@@ -12,7 +12,7 @@ const features = [
     label: "Execution",
     title: "Ship what matters.",
     description:
-      "No 80-page decks. I build, launch, and iterate — websites, automations, integrations — in weeks, not quarters.",
+      "No 80-page decks. I build, launch, and iterate websites, automations, integrations in weeks, not quarters.",
   },
   {
     label: "Growth",
@@ -151,12 +151,12 @@ const FeaturePanel = ({
   const opacity = useTransform(
     progress,
     [segStart, segStart + 0.08, isLast ? 1 : segEnd - 0.08, isLast ? 1 : segEnd],
-    [0, 1, 1, 0]
+    [0, 1, 1, 0],
   );
   const y = useTransform(
     progress,
     [segStart, segStart + 0.08, isLast ? 1 : segEnd - 0.08, isLast ? 1 : segEnd],
-    [80, 0, 0, -80]
+    [80, 0, 0, -80],
   );
 
   // Title scale — grows slightly as you scroll through
@@ -169,10 +169,7 @@ const FeaturePanel = ({
   const descY = useTransform(progress, [segStart, segEnd], [30, -10]);
 
   return (
-    <motion.div
-      className="absolute inset-0 flex items-center justify-center px-6 md:px-16"
-      style={{ opacity }}
-    >
+    <motion.div className="absolute inset-0 flex items-center justify-center px-6 md:px-16" style={{ opacity }}>
       <div className="max-w-3xl w-full">
         {/* Label */}
         <motion.span
