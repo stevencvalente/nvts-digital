@@ -3,26 +3,27 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24">
-      <div className="max-w-3xl relative z-10 pt-24">
+      <div className="max-w-4xl relative z-10 pt-24">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-display font-semibold text-[36px] md:text-[64px] leading-[1.08] tracking-tight text-foreground mb-8"
+          className="font-display font-semibold text-[42px] md:text-[80px] leading-[1.05] tracking-tight text-foreground mb-8"
         >
-          Your agency handles one thing.{" "}
-          Your developer handles another.{" "}
-          <span className="text-primary">Meanwhile, you're losing money.</span>
+          One expert.
+          <br />
+          <span className="text-primary">Five pillars.</span>
+          <br />
+          Zero gaps.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-muted-foreground text-lg font-body max-w-[560px] mb-12 leading-relaxed"
+          className="text-muted-foreground text-lg font-body max-w-[440px] mb-12 leading-relaxed"
         >
-          I'm the consultant who sees the full picture — data, AI, digital experience, growth,
-          and transformation. Five pillars. One expert. Zero excuses.
+          Full-stack digital consulting — from data to AI, experience to growth.
         </motion.p>
 
         <motion.div
