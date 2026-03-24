@@ -4,33 +4,25 @@ import { Linkedin } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
-
-const pillarOptions = [
-  "Data & Content Intelligence",
-  "Digital Experience",
-  "Growth & Acquisition",
-  "Digital Transformation",
-  "Artificial Intelligence",
-];
-
-const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
-  email: z.string().trim().email("Please enter a valid email").max(255, "Email must be under 255 characters"),
-  pillar: z.string().min(1, "Please select a pillar of interest"),
-  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be under 2000 characters"),
-});
+import { useI18n } from "@/i18n";
 
 const ContactSection = () => {
+  const { t } = useI18n();
   const [form, setForm] = useState({ name: "", email: "", pillar: "", message: "" });
   const [honeypot, setHoneypot] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
 
+  const contactSchema = z.object({
+    name: z.string().trim().min(1, t.contact.errors.nameRequired).max(100, t.contact.errors.nameMax),
+    email: z.string().trim().email(t.contact.errors.emailInvalid).max(255, t.contact.errors.emailMax),
+    pillar: z.string().min(1, t.contact.errors.pillarRequired),
+    message: z.string().trim().min(1, t.contact.errors.messageRequired).max(2000, t.contact.errors.messageMax),
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Honeypot check — bots fill hidden fields
     if (honeypot) return;
 
     const result = contactSchema.safeParse(form);
@@ -48,7 +40,6 @@ const ContactSection = () => {
 
     try {
       const id = crypto.randomUUID();
-
       await supabase.functions.invoke("send-transactional-email", {
         body: {
           templateName: "contact-confirmation",
@@ -57,12 +48,11 @@ const ContactSection = () => {
           templateData: { name: result.data.name },
         },
       });
-
       setSent(true);
       setForm({ name: "", email: "", pillar: "", message: "" });
-      toast.success("Message sent successfully!");
+      toast.success(t.contact.successToast);
     } catch {
-      toast.error("Something went wrong. Please try again.");
+      toast.error(t.contact.errorToast);
     } finally {
       setSending(false);
     }
@@ -79,21 +69,15 @@ const ContactSection = () => {
           className="mb-10"
         >
           <h2 className="font-display font-semibold text-4xl md:text-[52px] text-foreground tracking-tight mb-4">
-            Got a project in mind?
+            {t.contact.heading}
           </h2>
-          <p className="font-body text-lg text-muted-foreground">
-            Let's build something that actually performs.
-          </p>
+          <p className="font-body text-lg text-muted-foreground">{t.contact.subheading}</p>
         </motion.div>
 
         {sent ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-secondary border border-border rounded-2xl p-10 text-center"
-          >
-            <p className="font-display font-medium text-foreground text-lg mb-2">Message sent.</p>
-            <p className="text-muted-foreground font-body text-sm">I'll be in touch shortly.</p>
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-secondary border border-border rounded-2xl p-10 text-center">
+            <p className="font-display font-medium text-foreground text-lg mb-2">{t.contact.sentTitle}</p>
+            <p className="text-muted-foreground font-body text-sm">{t.contact.sentSubtitle}</p>
           </motion.div>
         ) : (
           <motion.form
@@ -104,70 +88,38 @@ const ContactSection = () => {
             onSubmit={handleSubmit}
             className="space-y-5"
           >
-            {/* Honeypot — hidden from real users, bots fill it */}
             <div className="absolute opacity-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
-              <input
-                type="text"
-                name="website"
-                autoComplete="off"
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
-                tabIndex={-1}
-              />
+              <input type="text" name="website" autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} />
             </div>
 
             <div>
-              <input
-                type="text"
-                placeholder="Name"
-                maxLength={100}
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-              />
+              <input type="text" placeholder={t.contact.namePlaceholder} maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors" />
               {errors.name && <p className="text-destructive text-xs font-body mt-1.5">{errors.name}</p>}
             </div>
             <div>
-              <input
-                type="email"
-                placeholder="Email"
-                maxLength={255}
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-              />
+              <input type="email" placeholder={t.contact.emailPlaceholder} maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors" />
               {errors.email && <p className="text-destructive text-xs font-body mt-1.5">{errors.email}</p>}
             </div>
             <div>
-              <select
-                value={form.pillar}
-                onChange={(e) => setForm({ ...form, pillar: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors appearance-none"
-              >
-                <option value="" disabled>Pillar of interest</option>
-                {pillarOptions.map((p) => (
-                  <option key={p} value={p}>{p}</option>
+              <select value={form.pillar} onChange={(e) => setForm({ ...form, pillar: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground focus:outline-none focus:border-primary transition-colors appearance-none">
+                <option value="" disabled>{t.contact.pillarPlaceholder}</option>
+                {t.services.pillars.map((p) => (
+                  <option key={p.title} value={p.title}>{p.title}</option>
                 ))}
               </select>
               {errors.pillar && <p className="text-destructive text-xs font-body mt-1.5">{errors.pillar}</p>}
             </div>
             <div>
-              <textarea
-                rows={4}
-                placeholder="Message"
-                maxLength={2000}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-              />
+              <textarea rows={4} placeholder={t.contact.messagePlaceholder} maxLength={2000} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3.5 text-[15px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none" />
               {errors.message && <p className="text-destructive text-xs font-body mt-1.5">{errors.message}</p>}
             </div>
-            <button
-              type="submit"
-              disabled={sending}
-              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-xl hover:bg-primary/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              {sending ? "Sending..." : "Send Message"}
+            <button type="submit" disabled={sending}
+              className="w-full bg-primary text-primary-foreground font-display font-medium text-base py-4 rounded-xl hover:bg-primary/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed">
+              {sending ? t.contact.sendingButton : t.contact.sendButton}
             </button>
           </motion.form>
         )}

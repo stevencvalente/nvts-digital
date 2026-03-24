@@ -1,22 +1,30 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const links = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+import { useNavigate } from "react-router-dom";
+import { useI18n, LOCALES } from "@/i18n";
 
 const Navbar = () => {
+  const { locale, t } = useI18n();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const links = [
+    { label: t.nav.services, href: "#services" },
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const switchLocale = (code: string) => {
+    navigate(`/${code}`);
+  };
 
   return (
     <motion.nav
@@ -28,7 +36,7 @@ const Navbar = () => {
       }`}
     >
       <div className="flex items-center justify-between py-5">
-        <a href="#" className="font-display font-semibold text-base tracking-tight text-foreground">
+        <a href={`/${locale}`} className="font-display font-semibold text-base tracking-tight text-foreground">
           NVTS DIGITAL
         </a>
 
@@ -42,11 +50,29 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+
+          {/* Language switcher */}
+          <div className="flex items-center gap-1 border border-border rounded-full px-1 py-0.5">
+            {LOCALES.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => switchLocale(l.code)}
+                className={`text-xs font-display font-medium px-2.5 py-1 rounded-full transition-all duration-200 ${
+                  locale === l.code
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+
           <a
             href="#contact"
             className="text-sm font-display font-medium bg-primary text-primary-foreground px-5 py-2 rounded-md hover:bg-primary/90 transition-all duration-200"
           >
-            Let's Talk
+            {t.nav.letsTalk}
           </a>
         </div>
 
@@ -77,12 +103,33 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
+
+              {/* Mobile language switcher */}
+              <div className="flex items-center gap-2">
+                {LOCALES.map((l) => (
+                  <button
+                    key={l.code}
+                    onClick={() => {
+                      switchLocale(l.code);
+                      setMenuOpen(false);
+                    }}
+                    className={`text-xs font-display font-medium px-3 py-1.5 rounded-full border transition-all duration-200 ${
+                      locale === l.code
+                        ? "bg-primary text-primary-foreground border-primary"
+                        : "text-muted-foreground border-border hover:text-foreground"
+                    }`}
+                  >
+                    {l.label}
+                  </button>
+                ))}
+              </div>
+
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
                 className="text-sm font-display font-medium bg-primary text-primary-foreground px-5 py-2 rounded-md text-center"
               >
-                Let's Talk
+                {t.nav.letsTalk}
               </a>
             </div>
           </motion.div>
