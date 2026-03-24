@@ -26,9 +26,5 @@ const BoldStatement = () => (
       </motion.p>
     </div>
   </section>
-);
-    </div>
-  </section>
-);
 
 export default BoldStatement;
