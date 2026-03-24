@@ -23,7 +23,8 @@ const Index = () => {
     <AboutSection />
     <ContactSection />
     <Footer />
-  </div>
-);
+    </div>
+  );
+};
 
 export default Index;
