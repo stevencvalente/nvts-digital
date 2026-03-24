@@ -7,9 +7,13 @@ import DiagnoseBlock from "@/components/DiagnoseBlock";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import useHeadMeta from "@/hooks/useHeadMeta";
 
-const Index = () => (
-  <div className="bg-background min-h-screen">
+const Index = () => {
+  useHeadMeta();
+
+  return (
+    <div className="bg-background min-h-screen">
     <Navbar />
     <HeroSection />
     <BoldStatement />
