@@ -5,6 +5,7 @@ import {
   Layers,
   Rocket,
   Compass,
+  Sparkles,
   Package,
   FolderOpen,
   LineChart,
@@ -16,6 +17,9 @@ import {
   Megaphone,
   Search,
   BarChart3,
+  Bot,
+  MessageSquare,
+  Cpu,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
@@ -43,7 +47,6 @@ const pillars = [
       { icon: Package, name: "PIM" },
       { icon: FolderOpen, name: "DAM" },
       { icon: LineChart, name: "Data Analytics" },
-      { icon: Brain, name: "AI Automation" },
     ],
   },
   {
@@ -82,6 +85,24 @@ const pillars = [
     ],
   },
   {
+    icon: Sparkles,
+    title: "Artificial Intelligence",
+    accent: "amber",
+    tagline:
+      "From automating workflows to deploying intelligent assistants — AI that delivers real ROI, not hype.",
+    stats: [
+      { value: "300%", label: "ROI year one" },
+      { value: "80%", label: "queries handled" },
+      { value: "75%", label: "faster processing" },
+    ],
+    services: [
+      { icon: Cpu, name: "Process Automation" },
+      { icon: Bot, name: "AI Chatbot / Assistant" },
+      { icon: Brain, name: "Predictive Analytics" },
+      { icon: MessageSquare, name: "Conversational AI" },
+    ],
+  },
+  {
     icon: Compass,
     title: "Digital Transformation",
     accent: "cyan",
@@ -96,7 +117,7 @@ const pillars = [
       { icon: Database, name: "Data Strategy" },
       { icon: Layers, name: "Experience Design" },
       { icon: Rocket, name: "Growth Engine" },
-      { icon: Brain, name: "AI Integration" },
+      { icon: Sparkles, name: "AI Integration" },
     ],
   },
 ];
@@ -105,18 +126,21 @@ const accentColor: Record<string, string> = {
   cyan: "text-cyan",
   violet: "text-violet",
   lime: "text-lime",
+  amber: "text-amber-400",
 };
 
 const accentBg: Record<string, string> = {
   cyan: "bg-cyan/10",
   violet: "bg-violet/10",
   lime: "bg-lime/10",
+  amber: "bg-amber-400/10",
 };
 
 const accentBorder: Record<string, string> = {
   cyan: "border-cyan/40",
   violet: "border-violet/40",
   lime: "border-lime/40",
+  amber: "border-amber-400/40",
 };
 
 const ServicesSection = () => {
