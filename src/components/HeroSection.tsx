@@ -13,7 +13,10 @@ const HeroSection = () => {
   const orbScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.15]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden"
+    >
       {/* Subtle right-side ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -39,9 +42,9 @@ const HeroSection = () => {
           className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03]"
           style={{
             backgroundImage: `radial-gradient(hsl(var(--primary)) 1px, transparent 1px)`,
-            backgroundSize: '32px 32px',
-            maskImage: 'linear-gradient(to left, black 0%, transparent 70%)',
-            WebkitMaskImage: 'linear-gradient(to left, black 0%, transparent 70%)',
+            backgroundSize: "32px 32px",
+            maskImage: "linear-gradient(to left, black 0%, transparent 70%)",
+            WebkitMaskImage: "linear-gradient(to left, black 0%, transparent 70%)",
           }}
         />
       </div>
@@ -66,7 +69,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground text-lg font-body max-w-[440px] mb-12 leading-relaxed"
         >
-          Full-stack digital consulting — from data to AI, experience to growth.
+          I help ambitious companies generate more revenue, reduce operational friction and build digital experiences
+          that actually perform across every layer of the stack
         </motion.p>
 
         <motion.div
