@@ -1,22 +1,5 @@
 import { motion } from "framer-motion";
 
-const floatingCards = [
-  { label: "Revenue Uplift", value: "+34%", x: 20, y: 140, delay: 0.8 },
-  { label: "Conversion Rate", value: "4.8×", x: -40, y: 320, delay: 1.1 },
-  { label: "Time to Market", value: "-60%", x: 30, y: 500, delay: 1.4 },
-  { label: "ROI", value: "12×", x: -20, y: 680, delay: 1.0 },
-];
-
-const float = (i: number) => ({
-  y: [0, -12, 0, 8, 0],
-  x: [0, i % 2 === 0 ? 6 : -6, 0],
-  transition: {
-    duration: 5 + i * 0.7,
-    repeat: Infinity,
-    ease: "easeInOut",
-  },
-});
-
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden">
@@ -64,30 +47,54 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Floating metric cards — right side */}
-      <div className="hidden lg:block absolute right-12 xl:right-24 top-1/2 -translate-y-1/2 w-[220px] z-0">
-        {floatingCards.map((card, i) => (
+      {/* Vertical power line — right side */}
+      <div className="hidden lg:flex absolute right-16 xl:right-28 top-0 bottom-0 items-center z-0">
+        <div className="relative h-[70%] w-px">
+          {/* Base line */}
+          <div className="absolute inset-0 w-px bg-border/40" />
+
+          {/* Animated glow traveling down */}
           <motion.div
-            key={card.label}
-            initial={{ opacity: 0, scale: 0.8, x: 60 }}
-            animate={{ opacity: 1, scale: 1, x: card.x }}
-            transition={{ duration: 0.7, delay: card.delay, ease: "easeOut" }}
-            style={{ top: card.y }}
-            className="absolute w-full"
-          >
+            className="absolute left-1/2 -translate-x-1/2 w-[3px] h-32 rounded-full"
+            style={{
+              background:
+                "linear-gradient(180deg, transparent 0%, hsl(var(--primary)) 40%, hsl(var(--primary)) 60%, transparent 100%)",
+              boxShadow: "0 0 20px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.2)",
+            }}
+            animate={{ top: ["-10%", "110%"] }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 0.5,
+            }}
+          />
+
+          {/* Pulse nodes along the line */}
+          {[0.15, 0.4, 0.65, 0.88].map((pos, i) => (
             <motion.div
-              animate={float(i)}
-              className="bg-card/80 backdrop-blur-md border border-border/60 rounded-xl px-5 py-4 shadow-[0_8px_30px_-12px_hsl(var(--foreground)/0.08)]"
-            >
-              <p className="text-muted-foreground text-xs font-body tracking-wide uppercase mb-1">
-                {card.label}
-              </p>
-              <p className="font-display text-2xl font-semibold text-foreground">
-                {card.value}
-              </p>
-            </motion.div>
-          </motion.div>
-        ))}
+              key={i}
+              className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary"
+              style={{ top: `${pos * 100}%` }}
+              initial={{ opacity: 0.3, scale: 0.8 }}
+              animate={{
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.4, 0.8],
+                boxShadow: [
+                  "0 0 0px hsl(var(--primary) / 0)",
+                  "0 0 16px hsl(var(--primary) / 0.6)",
+                  "0 0 0px hsl(var(--primary) / 0)",
+                ],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: pos * 3.5,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
