@@ -1,22 +1,5 @@
 import { motion } from "framer-motion";
 
-const floatingCards = [
-  { label: "Revenue Uplift", value: "+34%", x: 20, y: 140, delay: 0.8 },
-  { label: "Conversion Rate", value: "4.8×", x: -40, y: 320, delay: 1.1 },
-  { label: "Time to Market", value: "-60%", x: 30, y: 500, delay: 1.4 },
-  { label: "ROI", value: "12×", x: -20, y: 680, delay: 1.0 },
-];
-
-const float = (i: number) => ({
-  y: [0, -12, 0, 8, 0],
-  x: [0, i % 2 === 0 ? 6 : -6, 0],
-  transition: {
-    duration: 5 + i * 0.7,
-    repeat: Infinity,
-    ease: "easeInOut",
-  },
-});
-
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden">
