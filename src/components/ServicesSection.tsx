@@ -47,7 +47,6 @@ const pillars = [
       { icon: Package, name: "PIM" },
       { icon: FolderOpen, name: "DAM" },
       { icon: LineChart, name: "Data Analytics" },
-      { icon: Brain, name: "AI Automation" },
     ],
   },
   {
@@ -86,6 +85,24 @@ const pillars = [
     ],
   },
   {
+    icon: Sparkles,
+    title: "Artificial Intelligence",
+    accent: "amber",
+    tagline:
+      "From automating workflows to deploying intelligent assistants — AI that delivers real ROI, not hype.",
+    stats: [
+      { value: "300%", label: "ROI year one" },
+      { value: "80%", label: "queries handled" },
+      { value: "75%", label: "faster processing" },
+    ],
+    services: [
+      { icon: Cpu, name: "Process Automation" },
+      { icon: Bot, name: "AI Chatbot / Assistant" },
+      { icon: Brain, name: "Predictive Analytics" },
+      { icon: MessageSquare, name: "Conversational AI" },
+    ],
+  },
+  {
     icon: Compass,
     title: "Digital Transformation",
     accent: "cyan",
@@ -100,7 +117,7 @@ const pillars = [
       { icon: Database, name: "Data Strategy" },
       { icon: Layers, name: "Experience Design" },
       { icon: Rocket, name: "Growth Engine" },
-      { icon: Brain, name: "AI Integration" },
+      { icon: Sparkles, name: "AI Integration" },
     ],
   },
 ];
