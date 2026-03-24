@@ -7,10 +7,16 @@ const Footer = () => {
     <footer className="border-t border-border py-6 px-6 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-3 text-[13px] text-muted-foreground font-body">
       <span className="font-display font-medium text-foreground">{t.footer.brand}</span>
       <div className="flex items-center gap-6">
-        <span>© 2025</span>
-        <a href="#services" className="hover:text-primary transition-colors duration-200">{t.nav.services}</a>
-        <a href="#about" className="hover:text-primary transition-colors duration-200">{t.nav.about}</a>
-        <a href="#contact" className="hover:text-primary transition-colors duration-200">{t.nav.contact}</a>
+        <span>© 2026</span>
+        <a href="#services" className="hover:text-primary transition-colors duration-200">
+          {t.nav.services}
+        </a>
+        <a href="#about" className="hover:text-primary transition-colors duration-200">
+          {t.nav.about}
+        </a>
+        <a href="#contact" className="hover:text-primary transition-colors duration-200">
+          {t.nav.contact}
+        </a>
       </div>
     </footer>
   );
