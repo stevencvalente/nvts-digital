@@ -78,7 +78,7 @@ function GalaxyParticles() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.02}
+        size={0.012}
         sizeAttenuation
         depthWrite={false}
         vertexColors
