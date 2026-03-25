@@ -22,24 +22,6 @@ const HeroSection = () => {
       className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          style={{ y: orbY1, scale: orbScale }}
-          animate={{ opacity: [0.08, 0.14, 0.08] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[15%] right-[-5%] w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-primary blur-[100px]"
-        />
-        <motion.div
-          style={{ y: orbY2 }}
-          animate={{ opacity: [0.06, 0.11, 0.06] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-          className="absolute top-[40%] right-[10%] w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full bg-accent blur-[80px]"
-        />
-        <motion.div
-          style={{ y: orbY1 }}
-          animate={{ opacity: [0.04, 0.09, 0.04] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-          className="absolute top-[60%] right-[0%] w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full bg-primary blur-[60px]"
-        />
         <div
           className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03]"
           style={{
