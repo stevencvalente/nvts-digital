@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useI18n } from "@/i18n";
-import logoIcon from "@/assets/logo-icon.png";
 
 const HeroSection = () => {
   const { t } = useI18n();
@@ -50,14 +49,6 @@ const HeroSection = () => {
         />
       </div>
 
-      <motion.img
-        src={logoIcon}
-        alt="NVTS Digital logo"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ duration: 1, delay: 0.8 }}
-        className="absolute bottom-12 right-12 w-[280px] md:w-[400px] lg:w-[500px] pointer-events-none select-none"
-      />
 
       <div className="max-w-4xl relative z-10 pt-24">
         <motion.h1
