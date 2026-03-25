@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useI18n } from "@/i18n";
-import logoIcon from "@/assets/logo-icon.png";
 
 const HeroSection = () => {
   const { t } = useI18n();
