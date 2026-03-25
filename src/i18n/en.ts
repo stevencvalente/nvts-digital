@@ -93,7 +93,7 @@ export const en: Translations = {
       },
       {
         label: "Execution",
-        title: "Ship what matters.",
+        title: "Less talk. More done.",
         description:
           "No 80-page decks. I build, launch, and iterate websites, automations, integrations in weeks, not quarters.",
       },
