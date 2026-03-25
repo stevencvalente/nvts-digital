@@ -51,6 +51,9 @@ const HeroSection = () => {
         />
       </div>
 
+      <Suspense fallback={null}>
+        <SpiralGalaxy />
+      </Suspense>
 
       <div className="max-w-4xl relative z-10 pt-24">
         <motion.h1
