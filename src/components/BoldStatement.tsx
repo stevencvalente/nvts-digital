@@ -29,15 +29,15 @@ const BoldStatement = () => {
       </motion.div>
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.h2
-          className="font-display font-semibold text-[36px] md:text-[64px] lg:text-[72px] text-background leading-[1.05] tracking-tight mb-10"
+          className="font-display font-semibold text-[36px] md:text-[64px] text-background leading-[1.05] tracking-tight mb-10 lg:text-8xl"
           style={{ y: headingY, scale: headingScale, opacity: headingOpacity }}
         >
           {t.bold.line1}
           <br />
-          <span className="text-primary">{t.bold.line2}</span>
+          <span className="text-primary text-8xl">{t.bold.line2}</span>
         </motion.h2>
         <motion.p
-          className="font-body text-lg md:text-xl text-background/60 max-w-[580px] mx-auto leading-relaxed mb-4 px-[5px]"
+          className="font-body text-lg md:text-xl text-background/60 max-w-[580px] mx-auto leading-relaxed mb-4 px-0"
           style={{ y: subtitleY, opacity: subtitleOpacity }}
         >
           {t.bold.subtitle}
