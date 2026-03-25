@@ -37,7 +37,7 @@ const BoldStatement = () => {
           <span className="text-primary">{t.bold.line2}</span>
         </motion.h2>
         <motion.p
-          className="font-body text-lg md:text-xl text-background/60 max-w-[580px] mx-auto leading-relaxed mb-4"
+          className="font-body text-lg md:text-xl text-background/60 max-w-[580px] mx-auto leading-relaxed mb-4 px-[5px]"
           style={{ y: subtitleY, opacity: subtitleOpacity }}
         >
           {t.bold.subtitle}
