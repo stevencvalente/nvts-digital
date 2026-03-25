@@ -33,6 +33,7 @@ export const pt: Translations = {
       {
         title: "Dados & Inteligência de Conteúdo",
         tagline: "Faça os seus dados e ativos renderem mais.",
+        description: "Centralize informações de produto, organize ativos digitais e transforme dados brutos em insights claros e acionáveis para toda a equipa.",
         services: ["PIM", "DAM", "Análise de Dados"],
         problemQuote:
           "Os nossos dados de produto vivem em 5 folhas de cálculo, os nossos ativos estão espalhados por drives partilhados, e ninguém confia nos números dos relatórios.",
@@ -42,6 +43,7 @@ export const pt: Translations = {
       {
         title: "Experiência Digital",
         tagline: "Pixel-perfect, em todo o lado.",
+        description: "Construa experiências web imersivas, lojas e-commerce de alta conversão e apps móveis de qualidade nativa que fidelizam utilizadores.",
         services: ["WebGL/WebGPU", "Apps Móveis", "E-Commerce"],
         problemQuote:
           "O nosso website parece desatualizado, não temos app móvel apesar dos clientes pedirem, e a nossa loja e-commerce converte apenas 1.2%.",
@@ -51,6 +53,7 @@ export const pt: Translations = {
       {
         title: "Crescimento & Aquisição",
         tagline: "Estratégia full-funnel, do primeiro clique ao cliente fiel.",
+        description: "Alinhe CRM, media paga, SEO e estratégia de marketing num motor de crescimento que transforma investimento em receita mensurável.",
         services: ["CRM", "Campanhas Pagas", "SEO", "Estratégia de Marketing"],
         problemQuote:
           "Gastamos muito em anúncios mas não conseguimos rastrear o que converte. O nosso CRM é uma confusão de duplicados, o SEO é inexistente, e cada equipa tem uma estratégia de marketing diferente.",
@@ -60,6 +63,7 @@ export const pt: Translations = {
       {
         title: "Transformação Digital",
         tagline: "Fazer a transformação pegar de verdade.",
+        description: "Racionalize o seu stack de ferramentas, redesenhe processos em torno de objetivos reais e promova a adoção para que as iniciativas digitais não parem a meio.",
         services: ["Estratégia", "Redesenho de Processos", "Integração Tecnológica", "Gestão de Mudança"],
         problemQuote:
           "Temos 12 ferramentas que não comunicam entre si, as equipas trabalham em silos, e cada iniciativa digital empanca a meio.",
@@ -69,6 +73,7 @@ export const pt: Translations = {
       {
         title: "Inteligência Artificial",
         tagline: "IA que entrega ROI, não hype.",
+        description: "Identifique os casos de uso de IA com maior impacto, automatize trabalho repetitivo e implemente sistemas inteligentes que funcionam 24/7.",
         services: ["Automação de Processos", "Chatbot IA", "Análise Preditiva", "IA Conversacional"],
         problemQuote:
           "A nossa equipa de suporte está sobrecarregada com perguntas repetitivas, tomamos decisões por instinto porque os nossos dados não são acionáveis, e não sabemos por onde começar com IA.",

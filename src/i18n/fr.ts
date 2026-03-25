@@ -33,6 +33,7 @@ export const fr: Translations = {
       {
         title: "Données & Intelligence de Contenu",
         tagline: "Faites travailler vos données et vos actifs plus dur.",
+        description: "Centralisez les informations produit, organisez les actifs numériques et transformez les données brutes en insights clairs et exploitables.",
         services: ["PIM", "DAM", "Analyse de Données"],
         problemQuote:
           "Nos données produit sont réparties dans 5 tableurs, nos actifs sont dispersés sur des drives partagés, et personne ne fait confiance aux chiffres de nos rapports.",
@@ -42,6 +43,7 @@ export const fr: Translations = {
       {
         title: "Expérience Digitale",
         tagline: "Pixel-perfect, partout.",
+        description: "Créez des expériences web immersives, des boutiques e-commerce performantes et des apps mobiles de qualité native.",
         services: ["WebGL/WebGPU", "Apps Mobiles", "E-Commerce"],
         problemQuote:
           "Notre site web semble dépassé, nous n'avons pas d'app mobile malgré les demandes des clients, et notre boutique e-commerce convertit à peine 1.2%.",
@@ -51,6 +53,7 @@ export const fr: Translations = {
       {
         title: "Croissance & Acquisition",
         tagline: "Stratégie full-funnel, du premier clic au client fidèle.",
+        description: "Alignez CRM, médias payants, SEO et stratégie marketing en un moteur de croissance qui transforme les dépenses en revenus mesurables.",
         services: ["CRM", "Campagnes Payantes", "SEO", "Stratégie Marketing"],
         problemQuote:
           "Nous dépensons beaucoup en publicité mais ne pouvons pas suivre ce qui convertit. Notre CRM est un fouillis de doublons, notre SEO est inexistant, et chaque équipe a une stratégie marketing différente.",
@@ -60,6 +63,7 @@ export const fr: Translations = {
       {
         title: "Transformation Digitale",
         tagline: "Faire en sorte que la transformation tienne vraiment.",
+        description: "Rationalisez votre stack d'outils, redéfinissez les processus autour d'objectifs réels et favorisez l'adoption pour que les initiatives digitales aboutissent.",
         services: ["Stratégie", "Refonte des Processus", "Intégration Tech", "Conduite du Changement"],
         problemQuote:
           "Nous avons 12 outils qui ne communiquent pas entre eux, les équipes travaillent en silos, et chaque initiative digitale s'enlise à mi-chemin.",
@@ -69,6 +73,7 @@ export const fr: Translations = {
       {
         title: "Intelligence Artificielle",
         tagline: "L'IA qui délivre du ROI, pas du battage.",
+        description: "Identifiez les cas d'usage IA à plus fort impact, automatisez le travail répétitif et déployez des systèmes intelligents qui fonctionnent 24h/24.",
         services: ["Automatisation", "Chatbot IA", "Analyse Prédictive", "IA Conversationnelle"],
         problemQuote:
           "Notre équipe support est submergée de questions répétitives, nous prenons des décisions au feeling car nos données ne sont pas exploitables, et nous ne savons pas par où commencer avec l'IA.",
