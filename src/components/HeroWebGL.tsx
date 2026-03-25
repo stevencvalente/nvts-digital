@@ -104,7 +104,7 @@ const fragmentShader = `
     // Blend in primary blue only on hover
     color = mix(color, hoverTint, uHover * fresnel * 0.3);
     
-    float alpha = 0.18 + fresnel * 0.15 + uHover * 0.08;
+    float alpha = 0.22 + fresnel * 0.06 + uHover * 0.05;
     
     gl_FragColor = vec4(color, alpha);
   }
