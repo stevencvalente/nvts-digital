@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, lazy, Suspense } from "react";
 import { useI18n } from "@/i18n";
+
+const SpiralGalaxy = lazy(() => import("@/components/SpiralGalaxy"));
 
 const HeroSection = () => {
   const { t } = useI18n();
