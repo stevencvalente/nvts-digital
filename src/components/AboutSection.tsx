@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutPhoto from "@/assets/about-photo.png";
+
 import { useI18n } from "@/i18n";
 
 const AboutSection = () => {
@@ -15,7 +15,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="aspect-[4/5] rounded-2xl overflow-hidden"
         >
-          <img src={aboutPhoto} alt="Digital transformation consultant" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/abd1cb23-b0ab-4be4-b6cc-780c1ffa449a/lovable_image-2.png" alt="Digital transformation consultant" className="w-full h-full object-cover" />
         </motion.div>
 
         <motion.div
