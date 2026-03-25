@@ -2,14 +2,14 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
-const PARTICLE_COUNT = 60000;
+const PARTICLE_COUNT = 13200;
 const BRANCHES = 3;
-const RADIUS = 5;
+const RADIUS = 4.07;
 const SPIN = 1;
-const RANDOMNESS = 0.2;
-const RANDOMNESS_POWER = 3;
-const INSIDE_COLOR = new THREE.Color("#3b82f6"); // primary blue
-const OUTSIDE_COLOR = new THREE.Color("#4dbbcc"); // accent teal
+const RANDOMNESS = 0.79;
+const RANDOMNESS_POWER = 4.33;
+const INSIDE_COLOR = new THREE.Color("#2235c9");
+const OUTSIDE_COLOR = new THREE.Color("#fcfcfc");
 
 function GalaxyParticles() {
   const pointsRef = useRef<THREE.Points>(null);
@@ -78,7 +78,7 @@ function GalaxyParticles() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.02}
+        size={0.012}
         sizeAttenuation
         depthWrite={false}
         vertexColors
