@@ -20,8 +20,8 @@ export const en: Translations = {
     line1: "I don't consult.",
     line2: "I transform.",
     subtitle:
-      "Real change doesn't come from one more tool or one more agency.<br>
-      "It comes from someone who understands the full picture, your data, your customers, your technology and your goals and builds a strategy that connects all of it. That's what I do.",
+      "Real change doesn't come from one more tool or one more agency.<br>" +
+      "It comes from someone who understands the full picture, your data, your customers, your technology and your goals and builds a strategy that connects all of it. That\u2019s what I do.",
   },
   services: {
     heading: "Five pillars. One vision.",
