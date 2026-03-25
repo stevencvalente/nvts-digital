@@ -30,6 +30,7 @@ export interface Translations {
     pillars: {
       title: string;
       tagline: string;
+      description: string;
       services: string[];
       problemQuote: string;
       whatIDo: string;

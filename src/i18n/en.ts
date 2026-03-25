@@ -34,6 +34,7 @@ export const en: Translations = {
       {
         title: "Data & Content Intelligence",
         tagline: "Make your data and assets work harder.",
+        description: "Centralise product information, organise digital assets, and turn raw data into clear, actionable insights your whole team can trust.",
         services: ["PIM", "DAM", "Data Analytics"],
         problemQuote:
           "Our product data lives in 5 spreadsheets, our assets are scattered across shared drives, and nobody trusts the numbers in our reports.",
@@ -43,6 +44,7 @@ export const en: Translations = {
       {
         title: "Digital Experience",
         tagline: "Pixel-perfect, everywhere.",
+        description: "Build immersive web experiences, high-converting e-commerce stores, and native-quality mobile apps that keep users coming back.",
         services: ["WebGL/WebGPU", "Mobile Apps", "E-Commerce"],
         problemQuote:
           "Our website looks outdated, we have no mobile app despite customers asking for one, and our e-commerce store converts at barely 1.2%.",
@@ -52,6 +54,7 @@ export const en: Translations = {
       {
         title: "Growth & Acquisition",
         tagline: "Full-funnel strategy, first click to loyal customer.",
+        description: "Align CRM, paid media, SEO and marketing strategy into one growth engine that turns spend into measurable, compounding revenue.",
         services: ["CRM", "Paid Campaigns", "SEO", "Marketing Strategy"],
         problemQuote:
           "We spend heavily on ads but can't track what converts. Our CRM is a mess of duplicates, our SEO is non-existent, and every team has a different marketing strategy.",
@@ -61,6 +64,7 @@ export const en: Translations = {
       {
         title: "Digital Transformation",
         tagline: "Make transformation actually stick.",
+        description: "Rationalise your tool stack, redesign processes around real goals, and drive adoption so digital initiatives don't stall halfway.",
         services: ["Strategy", "Process Redesign", "Tech Integration", "Change Management"],
         problemQuote:
           "We have 12 tools that don't talk to each other, teams work in silos, and every digital initiative stalls halfway.",
@@ -70,6 +74,7 @@ export const en: Translations = {
       {
         title: "Artificial Intelligence",
         tagline: "AI that delivers ROI, not hype.",
+        description: "Identify the highest-impact AI use cases, automate repetitive work, and deploy intelligent systems that run 24/7 and pay for themselves.",
         services: ["Process Automation", "AI Chatbot", "Predictive Analytics", "Conversational AI"],
         problemQuote:
           "Our support team is overwhelmed with repetitive questions, we make gut-feel decisions because our data isn't actionable, and we have no idea where to actually start with AI.",

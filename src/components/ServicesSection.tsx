@@ -82,17 +82,19 @@ const ServicesSection = () => {
                           </div>
                           <span className="font-display font-semibold text-sm text-muted-foreground">{numbers[i]}</span>
                         </div>
-                        <h3 className="font-display font-semibold text-xl md:text-2xl tracking-tight text-foreground mb-3 leading-tight">
+                        <h3 className="font-display font-semibold text-xl md:text-2xl tracking-tight text-foreground mb-2 leading-tight">
                           {pillar.title}
                         </h3>
-                        <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">{pillar.tagline}</p>
-                        <div className="mt-auto flex flex-wrap gap-2">
+                        <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">{pillar.tagline}</p>
+                        <p className="text-muted-foreground/80 text-xs font-body leading-relaxed mb-6">{pillar.description}</p>
+                        <ul className="mt-auto flex flex-col gap-1.5 mb-2">
                           {pillar.services.map((svc) => (
-                            <span key={svc} className="text-xs font-body px-3 py-1.5 rounded-full bg-secondary text-muted-foreground border border-border">
+                            <li key={svc} className="flex items-center gap-2 text-xs font-body text-muted-foreground">
+                              <span className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
                               {svc}
-                            </span>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                         {isActive && (
                           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 inline-block bg-primary text-primary-foreground font-display font-medium text-sm px-6 py-2.5 rounded-full">
                             {t.services.clickToExplore}
