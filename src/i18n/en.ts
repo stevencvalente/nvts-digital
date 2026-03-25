@@ -99,7 +99,7 @@ export const en: Translations = {
       },
       {
         label: "Growth",
-        title: "Less talk. More done.",
+        title: "Grow further. Grow faster.",
         description:
           "Every system I build is designed to scale. Data compounds. Automations multiply. Your edge widens every month.",
       },
