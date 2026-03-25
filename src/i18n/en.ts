@@ -114,7 +114,7 @@ export const en: Translations = {
     label: "About",
     heading: "One consultant. Full-stack expertise.",
     description:
-      "With over 10 years in digital consulting, I've helped companies across e-commerce, retail, and B2B transform the way they operate, grow and compete. I work across the full digital stack from data architecture to customer experience, from AI strategy to paid acquisition so nothing falls through the cracks.",
+      "With over 10 years in digital consulting, I've helped companies across e-commerce, retail and B2B transform the way they operate, grow and compete. I work across the full digital stack from data architecture to customer experience, from AI strategy to paid acquisition so nothing falls through the cracks.",
     stats: ["10+ years experience", "30+ projects delivered", "5 pillars of expertise"],
   },
   contact: {
