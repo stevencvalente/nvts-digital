@@ -104,7 +104,7 @@ const fragmentShader = `
     // Blend in primary blue only on hover
     color = mix(color, hoverTint, uHover * fresnel * 0.3);
     
-    float alpha = 0.35 + fresnel * 0.25 + uHover * 0.1;
+    float alpha = 0.18 + fresnel * 0.15 + uHover * 0.08;
     
     gl_FragColor = vec4(color, alpha);
   }
@@ -163,7 +163,7 @@ function MorphBlob() {
   });
 
   return (
-    <mesh ref={meshRef} scale={2.2}>
+    <mesh ref={meshRef} scale={1.7}>
       <icosahedronGeometry args={[1, 64]} />
       <shaderMaterial
         vertexShader={vertexShader}
