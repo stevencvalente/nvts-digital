@@ -20,7 +20,7 @@ export const en: Translations = {
     line1: "I don't consult.",
     line2: "I transform.",
     subtitle:
-      "Your agency handles one thing. Your developer handles another. Meanwhile, you're losing money.",
+      "Real change doesn't come from one more tool or one more agency.<br/> It comes from someone who understands the full picture, your data, your customers, your technology and your goals and builds a strategy that connects all of it. That's what I do.",
   },
   services: {
     heading: "Five pillars. One vision.",
@@ -102,8 +102,7 @@ export const en: Translations = {
   diagnose: {
     paragraph:
       "Most businesses are sitting on untapped revenue buried in broken processes, disconnected tools and digital experiences that underperform.",
-    highlight:
-      "I diagnose the full stack and build what actually moves the needle.",
+    highlight: "I diagnose the full stack and build what actually moves the needle.",
   },
   about: {
     label: "About",
