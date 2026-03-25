@@ -10,7 +10,7 @@ export const pt: Translations = {
   hero: {
     line1: "Um especialista.",
     line2: "Cinco pilares.",
-    line3: "Zero lacunas.",
+    line3: "Resultados reais.",
     description:
       "Ajudo empresas ambiciosas a gerar mais receita, reduzir fricção operacional e construir experiências digitais que realmente funcionam em todas as camadas do stack",
     cta1: "Descobrir os Meus Serviços",
