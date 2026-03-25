@@ -2,9 +2,9 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
-const PARTICLE_COUNT = 13200;
-const BRANCHES = 3;
-const RADIUS = 4.07;
+const PARTICLE_COUNT = 40000;
+const BRANCHES = 5;
+const RADIUS = 6;
 const SPIN = 1;
 const RANDOMNESS = 0.79;
 const RANDOMNESS_POWER = 4.33;
