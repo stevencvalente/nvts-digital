@@ -1,14 +1,15 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useMemo, useRef, useCallback, useEffect } from "react";
 import * as THREE from "three";
 
 const vertexShader = `
   uniform float uTime;
+  uniform vec2 uMouse;
+  uniform float uHover;
   varying vec3 vNormal;
   varying vec3 vPosition;
   varying float vDisplacement;
 
-  //	Simplex 3D Noise
   vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
   vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
 
@@ -56,8 +57,16 @@ const vertexShader = `
   }
 
   void main() {
-    float noise = snoise(position * 1.2 + uTime * 0.3) * 0.35
-                + snoise(position * 2.4 + uTime * 0.5) * 0.15;
+    float baseNoise = snoise(position * 1.0 + uTime * 0.15) * 0.2
+                    + snoise(position * 2.0 + uTime * 0.25) * 0.08;
+    
+    // Mouse proximity distortion
+    float mouseInfluence = uHover * 0.15;
+    vec3 mouseDir = normalize(vec3(uMouse, 0.0) - position);
+    float mouseDist = length(vec3(uMouse, 0.0) - position);
+    float mouseEffect = mouseInfluence * smoothstep(2.0, 0.0, mouseDist);
+    
+    float noise = baseNoise + mouseEffect;
     
     vec3 newPosition = position + normal * noise;
     vDisplacement = noise;
@@ -69,26 +78,33 @@ const vertexShader = `
 
 const fragmentShader = `
   uniform float uTime;
+  uniform float uHover;
   varying vec3 vNormal;
   varying vec3 vPosition;
   varying float vDisplacement;
 
   void main() {
-    // Primary blue: hsl(221, 83%, 53%) ≈ rgb(0.13, 0.39, 0.93)
-    vec3 baseColor = vec3(0.13, 0.39, 0.93);
-    vec3 highlightColor = vec3(0.4, 0.65, 1.0);
-    vec3 deepColor = vec3(0.05, 0.15, 0.55);
+    // Muted, desaturated blue-grey palette
+    vec3 baseColor = vec3(0.25, 0.35, 0.50);
+    vec3 highlightColor = vec3(0.45, 0.55, 0.72);
+    vec3 deepColor = vec3(0.10, 0.14, 0.22);
+    
+    // Subtle blue tint on hover
+    vec3 hoverTint = vec3(0.15, 0.35, 0.75);
 
     vec3 lightDir = normalize(vec3(0.5, 1.0, 0.8));
     float diffuse = max(dot(normalize(vNormal), lightDir), 0.0);
     
     float fresnel = pow(1.0 - abs(dot(normalize(vNormal), normalize(-vPosition))), 3.0);
     
-    vec3 color = mix(deepColor, baseColor, diffuse * 0.7 + 0.3);
-    color = mix(color, highlightColor, fresnel * 0.6);
-    color += vDisplacement * 0.3 * highlightColor;
+    vec3 color = mix(deepColor, baseColor, diffuse * 0.6 + 0.3);
+    color = mix(color, highlightColor, fresnel * 0.4);
+    color += vDisplacement * 0.15 * highlightColor;
     
-    float alpha = 0.7 + fresnel * 0.3;
+    // Blend in primary blue only on hover
+    color = mix(color, hoverTint, uHover * fresnel * 0.3);
+    
+    float alpha = 0.35 + fresnel * 0.25 + uHover * 0.1;
     
     gl_FragColor = vec4(color, alpha);
   }
@@ -96,16 +112,53 @@ const fragmentShader = `
 
 function MorphBlob() {
   const meshRef = useRef<THREE.Mesh>(null);
+  const mouseRef = useRef(new THREE.Vector2(0, 0));
+  const hoverRef = useRef(0);
+  const { gl } = useThree();
+
   const uniforms = useMemo(
-    () => ({ uTime: { value: 0 } }),
+    () => ({
+      uTime: { value: 0 },
+      uMouse: { value: new THREE.Vector2(0, 0) },
+      uHover: { value: 0 },
+    }),
     []
   );
 
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    const rect = gl.domElement.getBoundingClientRect();
+    mouseRef.current.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouseRef.current.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  }, [gl]);
+
+  const handleMouseEnter = useCallback(() => { hoverRef.current = 1; }, []);
+  const handleMouseLeave = useCallback(() => { hoverRef.current = 0; }, []);
+
+  useEffect(() => {
+    const el = gl.domElement.parentElement;
+    if (!el) return;
+    el.addEventListener("mousemove", handleMouseMove);
+    el.addEventListener("mouseenter", handleMouseEnter);
+    el.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      el.removeEventListener("mousemove", handleMouseMove);
+      el.removeEventListener("mouseenter", handleMouseEnter);
+      el.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [gl, handleMouseMove, handleMouseEnter, handleMouseLeave]);
+
   useFrame(({ clock }) => {
-    uniforms.uTime.value = clock.getElapsedTime();
+    const t = clock.getElapsedTime();
+    uniforms.uTime.value = t;
+    
+    // Smooth mouse lerp
+    uniforms.uMouse.value.lerp(mouseRef.current, 0.05);
+    // Smooth hover transition
+    uniforms.uHover.value += (hoverRef.current - uniforms.uHover.value) * 0.04;
+    
     if (meshRef.current) {
-      meshRef.current.rotation.y = clock.getElapsedTime() * 0.08;
-      meshRef.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.12) * 0.1;
+      meshRef.current.rotation.y = t * 0.05;
+      meshRef.current.rotation.x = Math.sin(t * 0.08) * 0.08;
     }
   });
 
@@ -125,7 +178,7 @@ function MorphBlob() {
 
 export default function HeroWebGL() {
   return (
-    <div className="absolute top-0 right-0 w-[55%] h-full pointer-events-none">
+    <div className="absolute top-0 right-0 w-[55%] h-full" style={{ pointerEvents: "auto" }}>
       <Canvas
         camera={{ position: [0, 0, 5], fov: 45 }}
         dpr={[1, 1.5]}
