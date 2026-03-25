@@ -1,8 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, lazy, Suspense } from "react";
+import { useRef } from "react";
 import { useI18n } from "@/i18n";
-
-const HeroWebGL = lazy(() => import("@/components/HeroWebGL"));
 
 const HeroSection = () => {
   const { t } = useI18n();
@@ -51,9 +49,6 @@ const HeroSection = () => {
         />
       </div>
 
-      <Suspense fallback={null}>
-        <HeroWebGL />
-      </Suspense>
 
       <div className="max-w-4xl relative z-10 pt-24">
         <motion.h1
