@@ -15,7 +15,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="aspect-[4/5] rounded-2xl overflow-hidden"
         >
-          <img src="/lovable-uploads/abd1cb23-b0ab-4be4-b6cc-780c1ffa449a/lovable_image-2.png" alt="Digital transformation consultant" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/d520ec63-2f7b-4cd3-a0c7-2f96aaad8a3b.png" alt="Digital transformation consultant" className="w-full h-full object-cover rounded-2xl shadow-md" />
         </motion.div>
 
         <motion.div
