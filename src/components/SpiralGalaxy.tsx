@@ -2,12 +2,12 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
-const PARTICLE_COUNT = 40000;
+const PARTICLE_COUNT = 15000;
 const BRANCHES = 5;
-const RADIUS = 6;
+const RADIUS = 4.5;
 const SPIN = 1;
 const RANDOMNESS = 1.8;
-const RANDOMNESS_POWER = 2.2;
+const RANDOMNESS_POWER = 3.7;
 const INSIDE_COLOR = new THREE.Color("#2235c9");
 const OUTSIDE_COLOR = new THREE.Color("#fcfcfc");
 
