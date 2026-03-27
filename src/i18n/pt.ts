@@ -11,8 +11,8 @@ export const pt: Translations = {
     "line1": "Um especialista.",
     "line2": "Cinco pilares.",
     "line3": "Resultados reais.",
-    "description": "Ajudo empresas ambiciosas a gerar mais receita, reduzir fricção operacional e construir experiências digitais que realmente funcionam em todas as camadas do stack",
-    "cta1": "Descobrir os Meus Serviços",
+    "description": "Ajudo empresas ambiciosas a gerar mais receita, reduzir atritos operacionais e criar experiências digitais que realmente funcionam a todos os níveis",
+    "cta1": "Ver os Meus Serviços",
     "cta2": "Vamos Conversar"
   },
   "bold": {
@@ -30,8 +30,8 @@ export const pt: Translations = {
     "pillars": [
       {
         "title": "Dados & Inteligência de Conteúdo",
-        "tagline": "Faça os seus dados e ativos renderem mais.",
-        "description": "Centralize informações de produto, organize ativos digitais e transforme dados brutos em insights claros e acionáveis para toda a equipa.",
+        "tagline": "Faça os seus dados e ativos trabalharem mais.",
+        "description": "Centralize informações de produto, organize os seus ativos digitais e transforme dados brutos em insights claros que toda a equipa pode usar.",
         "services": [
           "PIM",
           "DAM",
@@ -50,12 +50,12 @@ export const pt: Translations = {
           "E-Commerce"
         ],
         "problemQuote": "O nosso website parece desatualizado, não temos app móvel apesar dos clientes pedirem, e a nossa loja e-commerce converte apenas 1.2%.",
-        "whatIDo": "Desenho e construo pontos de contacto digitais imersivos e de alto desempenho — desde experiências de marca em WebGL até e-commerce otimizado para conversão e apps móveis de qualidade nativa."
+        "whatIDo": "Crio experiências digitais imersivas e de alta performance — desde websites com WebGL a lojas e-commerce otimizadas para conversão e apps móveis de qualidade nativa."
       },
       {
         "title": "Crescimento & Aquisição",
         "tagline": "Estratégia full-funnel, do primeiro clique ao cliente fiel.",
-        "description": "Alinhe CRM, media paga, SEO e estratégia de marketing num motor de crescimento que transforma investimento em receita mensurável.",
+        "description": "Una CRM, publicidade paga, SEO e estratégia de marketing num único motor de crescimento que transforma investimento em receita real.",
         "services": [
           "CRM",
           "Campanhas Pagas",
@@ -68,7 +68,7 @@ export const pt: Translations = {
       {
         "title": "Transformação Digital",
         "tagline": "Fazer a transformação pegar de verdade.",
-        "description": "Racionalize o seu stack de ferramentas, redesenhe processos em torno de objetivos reais e promova a adoção para que as iniciativas digitais não parem a meio.",
+        "description": "Simplifique o seu conjunto de ferramentas, redesenhe processos em torno de objetivos reais e garanta a adoção para que as iniciativas digitais não fiquem pelo caminho.",
         "services": [
           "Estratégia",
           "Redesenho de Processos",
@@ -76,7 +76,7 @@ export const pt: Translations = {
           "Gestão de Mudança"
         ],
         "problemQuote": "Temos 12 ferramentas que não comunicam entre si, as equipas trabalham em silos, e cada iniciativa digital empanca a meio.",
-        "whatIDo": "Audito todo o seu stack, elimino redundâncias, redesenho processos em torno de objetivos reais de negócio, e promovo a adoção entre equipas — para que a transformação realmente funcione."
+        "whatIDo": "Audito todo o seu stack, elimino redundâncias, redesenho processos em torno de objetivos reais de negócio e promovo a adoção entre equipas para que a transformação realmente funcione."
       },
       {
         "title": "Inteligência Artificial",
@@ -89,7 +89,7 @@ export const pt: Translations = {
           "IA Conversacional"
         ],
         "problemQuote": "A nossa equipa de suporte está sobrecarregada com perguntas repetitivas, tomamos decisões por instinto porque os nossos dados não são acionáveis, e não sabemos por onde começar com IA.",
-        "whatIDo": "Identifico os pontos de entrada de IA com maior ROI no seu negócio, construo chatbots personalizados, automatizo workflows repetitivos e implemento modelos preditivos que funcionam 24/7."
+        "whatIDo": "Identifico onde a IA tem maior impacto no seu negócio, crio chatbots personalizados, automatizo tarefas repetitivas e implemento modelos preditivos que funcionam 24/7."
       }
     ]
   },
@@ -98,7 +98,7 @@ export const pt: Translations = {
       {
         "label": "Estratégia",
         "title": "Veja o panorama completo.",
-        "description": "A maioria das empresas otimiza em silos. Eu mapeio cada ponto de contacto — do primeiro clique à compra recorrente — e encontro onde o valor se perde."
+        "description": "A maioria das empresas otimiza em silos. Eu mapeio cada ponto de contacto do primeiro clique à compra recorrente e encontro onde o valor se perde."
       },
       {
         "label": "Execução",
@@ -113,8 +113,8 @@ export const pt: Translations = {
     ]
   },
   "diagnose": {
-    "paragraph": "A maioria das empresas está sentada sobre receita inexplorada enterrada em processos quebrados, ferramentas desconectadas e experiências digitais que não performam.",
-    "highlight": "Eu diagnostico todo o stack e construo o que realmente move a agulha."
+    "paragraph": "A maioria das empresas tem receita por capturar, perdida em processos quebrados, ferramentas desligadas e experiências digitais que não funcionam.",
+    "highlight": "Eu analiso todo o sistema e construo o que realmente faz a diferença."
   },
   "about": {
     "label": "Sobre",

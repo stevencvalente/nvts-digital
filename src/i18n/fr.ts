@@ -11,8 +11,8 @@ export const fr: Translations = {
     "line1": "Un expert.",
     "line2": "Cinq piliers.",
     "line3": "Résultats réels.",
-    "description": "J'aide les entreprises ambitieuses à générer plus de revenus, réduire les frictions opérationnelles et construire des expériences digitales qui performent réellement à chaque niveau du stack",
-    "cta1": "Découvrir Mes Services",
+    "description": "J'aide les entreprises ambitieuses à générer plus de revenus, réduire les frictions opérationnelles et créer des expériences digitales qui fonctionnent vraiment à tous les niveaux",
+    "cta1": "Voir mes services",
     "cta2": "Parlons-en"
   },
   "bold": {
@@ -30,8 +30,8 @@ export const fr: Translations = {
     "pillars": [
       {
         "title": "Données & Intelligence de Contenu",
-        "tagline": "Faites travailler vos données et vos actifs plus dur.",
-        "description": "Centralisez les informations produit, organisez les actifs numériques et transformez les données brutes en insights clairs et exploitables.",
+        "tagline": "Faites travailler davantage vos données et vos actifs.",
+        "description": "Centralisez vos informations produit, organisez vos actifs numériques et transformez les données brutes en insights clairs que toute votre équipe peut utiliser.",
         "services": [
           "PIM",
           "DAM",
@@ -50,12 +50,12 @@ export const fr: Translations = {
           "E-Commerce"
         ],
         "problemQuote": "Notre site web semble dépassé, nous n'avons pas d'app mobile malgré les demandes des clients, et notre boutique e-commerce convertit à peine 1.2%.",
-        "whatIDo": "Je conçois et développe des points de contact numériques immersifs et performants — des expériences de marque en WebGL à l'e-commerce optimisé pour la conversion et aux apps mobiles de qualité native."
+        "whatIDo": "Je crée des expériences digitales immersives et performantes — des sites avec WebGL aux boutiques e-commerce optimisées pour la conversion et aux apps mobiles de qualité native."
       },
       {
         "title": "Croissance & Acquisition",
         "tagline": "Stratégie full-funnel, du premier clic au client fidèle.",
-        "description": "Alignez CRM, médias payants, SEO et stratégie marketing en un moteur de croissance qui transforme les dépenses en revenus mesurables.",
+        "description": "Unifiez CRM, publicité payante, SEO et stratégie marketing en un seul moteur de croissance qui transforme vos dépenses en revenus réels.",
         "services": [
           "CRM",
           "Campagnes Payantes",
@@ -68,7 +68,7 @@ export const fr: Translations = {
       {
         "title": "Transformation Digitale",
         "tagline": "Faire en sorte que la transformation tienne vraiment.",
-        "description": "Rationalisez votre stack d'outils, redéfinissez les processus autour d'objectifs réels et favorisez l'adoption pour que les initiatives digitales aboutissent.",
+        "description": "Simplifiez votre arsenal d'outils, redéfinissez les processus autour d'objectifs clairs et assurez l'adoption pour que vos initiatives digitales aillent jusqu'au bout.",
         "services": [
           "Stratégie",
           "Refonte des Processus",
@@ -76,7 +76,7 @@ export const fr: Translations = {
           "Conduite du Changement"
         ],
         "problemQuote": "Nous avons 12 outils qui ne communiquent pas entre eux, les équipes travaillent en silos, et chaque initiative digitale s'enlise à mi-chemin.",
-        "whatIDo": "J'audite l'ensemble de votre stack, j'élimine les redondances, je redéfinis les processus autour d'objectifs business réels, et je favorise l'adoption dans toutes les équipes — pour que la transformation tienne vraiment."
+        "whatIDo": "J'audite l'ensemble de votre stack, j'élimine les redondances, je redéfinis les processus autour d'objectifs business réels et je favorise l'adoption dans toutes les équipes pour que la transformation tienne vraiment."
       },
       {
         "title": "Intelligence Artificielle",
@@ -89,7 +89,7 @@ export const fr: Translations = {
           "IA Conversationnelle"
         ],
         "problemQuote": "Notre équipe support est submergée de questions répétitives, nous prenons des décisions au feeling car nos données ne sont pas exploitables, et nous ne savons pas par où commencer avec l'IA.",
-        "whatIDo": "J'identifie les points d'entrée IA à plus fort ROI dans votre entreprise, je crée des chatbots sur mesure, j'automatise les workflows répétitifs et je déploie des modèles prédictifs qui fonctionnent 24h/24."
+        "whatIDo": "J'identifie où l'IA a le plus d'impact dans votre entreprise, je crée des chatbots sur mesure, j'automatise les tâches répétitives et je déploie des modèles prédictifs qui fonctionnent 24h/24."
       }
     ]
   },
@@ -98,7 +98,7 @@ export const fr: Translations = {
       {
         "label": "Stratégie",
         "title": "Voyez le tableau complet.",
-        "description": "La plupart des entreprises optimisent en silos. Je cartographie chaque point de contact — du premier clic à l'achat récurrent — et je trouve où la valeur s'échappe."
+        "description": "La plupart des entreprises optimisent en silos. Je cartographie chaque point de contact du premier clic à l'achat récurrent et je trouve où la valeur s'échappe."
       },
       {
         "label": "Exécution",
@@ -113,8 +113,8 @@ export const fr: Translations = {
     ]
   },
   "diagnose": {
-    "paragraph": "La plupart des entreprises sont assises sur des revenus inexploités, enfouis dans des processus cassés, des outils déconnectés et des expériences digitales sous-performantes.",
-    "highlight": "Je diagnostique l'ensemble du stack et je construis ce qui fait vraiment avancer les choses."
+    "paragraph": "La plupart des entreprises ont des revenus à saisir, cachés dans des processus cassés, des outils déconnectés et des expériences digitales qui ne fonctionnent pas.",
+    "highlight": "J'analyse l'ensemble du système et je construis ce qui fait vraiment la différence."
   },
   "about": {
     "label": "À propos",
