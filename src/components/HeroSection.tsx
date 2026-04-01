@@ -7,6 +7,7 @@ const SpiralGalaxy = lazy(() => import("@/components/SpiralGalaxy"));
 
 const HeroSection = () => {
   const { t } = useI18n();
+  const isMobile = useIsMobile();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
