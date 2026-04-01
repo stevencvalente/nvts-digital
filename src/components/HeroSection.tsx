@@ -1,11 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, lazy, Suspense } from "react";
 import { useI18n } from "@/i18n";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const SpiralGalaxy = lazy(() => import("@/components/SpiralGalaxy"));
 
 const HeroSection = () => {
   const { t } = useI18n();
+  const isMobile = useIsMobile();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -33,9 +35,11 @@ const HeroSection = () => {
         />
       </div>
 
-      <Suspense fallback={null}>
-        <SpiralGalaxy />
-      </Suspense>
+      {!isMobile && (
+        <Suspense fallback={null}>
+          <SpiralGalaxy />
+        </Suspense>
+      )}
 
       <div className="max-w-4xl relative z-10 pt-24">
         <motion.h1
