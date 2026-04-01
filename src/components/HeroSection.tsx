@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, lazy, Suspense } from "react";
 import { useI18n } from "@/i18n";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const SpiralGalaxy = lazy(() => import("@/components/SpiralGalaxy"));
 
