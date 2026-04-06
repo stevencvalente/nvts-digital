@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useI18n } from "@/i18n";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const DiagnoseBlock = () => {
   const { t } = useI18n();
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -15,22 +17,35 @@ const DiagnoseBlock = () => {
   const allWords = [...words, ...highlightWords];
 
   return (
-    <section ref={containerRef} className="py-32 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24">
+    <section ref={containerRef} className="py-10 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24">
       <div className="max-w-[900px] mx-auto">
-        <p className="font-display text-[28px] md:text-[44px] lg:text-[56px] leading-[1.15] tracking-[-0.03em] font-semibold">
-          {words.map((word, i) => {
-            const start = i / allWords.length;
-            const end = (i + 1) / allWords.length;
-            return <Word key={i} start={start} end={end} progress={scrollYProgress}>{word}</Word>;
-          })}
-          <br className="hidden md:block" />
-          {highlightWords.map((word, i) => {
-            const globalIndex = words.length + i;
-            const start = globalIndex / allWords.length;
-            const end = (globalIndex + 1) / allWords.length;
-            return <Word key={`h-${i}`} start={start} end={end} progress={scrollYProgress} highlight>{word}</Word>;
-          })}
-        </p>
+        {isMobile ? (
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="font-display text-[28px] leading-[1.15] tracking-[-0.03em] font-semibold"
+          >
+            {words.join(" ")}{" "}
+            <span className="text-primary">{highlightWords.join(" ")}</span>
+          </motion.p>
+        ) : (
+          <p className="font-display text-[28px] md:text-[44px] lg:text-[56px] leading-[1.15] tracking-[-0.03em] font-semibold">
+            {words.map((word, i) => {
+              const start = i / allWords.length;
+              const end = (i + 1) / allWords.length;
+              return <Word key={i} start={start} end={end} progress={scrollYProgress}>{word}</Word>;
+            })}
+            <br className="hidden md:block" />
+            {highlightWords.map((word, i) => {
+              const globalIndex = words.length + i;
+              const start = globalIndex / allWords.length;
+              const end = (globalIndex + 1) / allWords.length;
+              return <Word key={`h-${i}`} start={start} end={end} progress={scrollYProgress} highlight>{word}</Word>;
+            })}
+          </p>
+        )}
       </div>
     </section>
   );

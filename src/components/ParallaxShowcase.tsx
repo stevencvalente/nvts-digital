@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useI18n } from "@/i18n";
 
 const ParallaxShowcase = () => {
@@ -11,8 +11,14 @@ const ParallaxShowcase = () => {
     offset: ["start start", "end end"],
   });
 
+  const [heightVh, setHeightVh] = useState((features.length + 1) * 100);
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    setHeightVh((features.length + (isMobile ? 0.15 : 1)) * 100);
+  }, [features.length]);
+
   return (
-    <section ref={containerRef} className="relative" style={{ height: `${(features.length + 1) * 100}vh` }}>
+    <section ref={containerRef} className="relative" style={{ height: `${heightVh}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden bg-foreground" style={{ overflowX: 'hidden' }}>
         <motion.div
           className="absolute inset-0 pointer-events-none"
