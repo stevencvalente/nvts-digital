@@ -50,7 +50,7 @@ export const fr: Translations = {
           "E-Commerce"
         ],
         "problemQuote": "Notre site web semble dépassé, nous n'avons pas d'app mobile malgré les demandes des clients, et notre boutique e-commerce convertit à peine 1.2%.",
-        "whatIDo": "Je crée des expériences digitales immersives et performantes — des sites avec WebGL aux boutiques e-commerce optimisées pour la conversion et aux apps mobiles de qualité native."
+        "whatIDo": "Je crée des expériences digitales immersives et performantes des sites avec WebGL aux boutiques e-commerce optimisées pour la conversion et aux apps mobiles de qualité native."
       },
       {
         "title": "Croissance & Acquisition",
@@ -63,7 +63,7 @@ export const fr: Translations = {
           "Stratégie Marketing"
         ],
         "problemQuote": "Nous dépensons beaucoup en publicité mais ne pouvons pas suivre ce qui convertit. Notre CRM est un fouillis de doublons, notre SEO est inexistant, et chaque équipe a une stratégie marketing différente.",
-        "whatIDo": "Je construis un moteur de croissance unifié — une base CRM propre, une stratégie payante basée sur des données ROAS réelles, un SEO qui s'accumule dans le temps, et un plan multicanal cohérent."
+        "whatIDo": "Je construis un moteur de croissance unifié une base CRM propre, une stratégie payante basée sur des données ROAS réelles, un SEO qui s'accumule dans le temps et un plan multicanal cohérent."
       },
       {
         "title": "Transformation Digitale",
