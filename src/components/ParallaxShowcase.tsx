@@ -13,7 +13,7 @@ const ParallaxShowcase = () => {
 
   return (
     <section ref={containerRef} className="relative" style={{ height: `${(features.length + 1) * 100}vh` }}>
-      <div className="sticky top-0 h-screen overflow-hidden bg-foreground">
+      <div className="sticky top-0 h-screen overflow-hidden bg-foreground" style={{ overflowX: 'hidden' }}>
         <motion.div
           className="absolute inset-0 pointer-events-none"
           style={{ opacity: useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 0.6, 0.2]) }}
