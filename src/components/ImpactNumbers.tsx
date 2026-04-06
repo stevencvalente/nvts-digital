@@ -68,7 +68,7 @@ const ImpactNumbers = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              <div className="font-display text-6xl md:text-7xl lg:text-8xl font-semibold text-primary mb-3 leading-none">
+              <div className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-3 leading-none">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="font-display text-lg md:text-xl font-semibold text-background mb-2">
