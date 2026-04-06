@@ -90,16 +90,18 @@ const SpiralGalaxy = () => {
         const nx = cx + distortX;
         const ny = cy + distortY;
 
-        // Some dots glow — based on wave peaks
-        const glowIntensity = wave1 * wave2;
-        const isGlowing = glowIntensity > 0.45;
+        // Random glow — each dot gets a unique phase so they pop independently
+        const seed = (row * 127 + col * 311) % 1000 / 1000; // pseudo-random per dot
+        const glowPhase = Math.sin(t * (0.8 + seed * 1.5) + seed * 6.28);
+        const isGlowing = glowPhase > 0.6;
+        const glowIntensity = Math.max(0, (glowPhase - 0.6) / 0.4); // 0..1 ramp
 
         nodes.push({ x: nx, y: ny, alpha, r, g, b, size });
 
-        // Draw glow halo first for glowing dots
+        // Draw glow halo for randomly glowing dots
         if (isGlowing && alpha > 0.08) {
           const glowRadius = size * 4;
-          const glowAlpha = alpha * glowIntensity * 0.5;
+          const glowAlpha = alpha * glowIntensity * 0.6;
           const gradient = ctx.createRadialGradient(nx, ny, 0, nx, ny, glowRadius);
           gradient.addColorStop(0, `rgba(${r},${g},${b},${glowAlpha})`);
           gradient.addColorStop(1, `rgba(${r},${g},${b},0)`);
