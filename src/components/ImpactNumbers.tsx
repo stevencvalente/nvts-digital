@@ -51,10 +51,10 @@ const ImpactNumbers = () => {
       </div>
 
       <motion.div className="max-w-6xl mx-auto relative z-10" style={{ opacity, y }}>
-        <h2 className="font-display text-center text-2xl md:text-4xl font-semibold text-foreground mb-4 tracking-tight">
+        <h2 className="font-display text-center text-2xl md:text-4xl font-semibold text-background mb-4 tracking-tight">
           {t.impact.heading}
         </h2>
-        <p className="text-center text-muted-foreground text-base md:text-lg mb-16 md:mb-24 max-w-xl mx-auto">
+        <p className="text-center text-background/60 text-base md:text-lg mb-16 md:mb-24 max-w-xl mx-auto">
           {t.impact.subheading}
         </p>
 
