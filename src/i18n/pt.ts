@@ -137,6 +137,12 @@ export const pt: Translations = {
         "suffix": "%",
         "label": "Time-to-Market mais rápido",
         "description": "Entrega acelerada ao eliminar ferramentas redundantes e alinhar equipas em torno de objetivos claros."
+      },
+      {
+        "value": 72,
+        "suffix": "%",
+        "label": "Já usam IA",
+        "description": "Das empresas já adotaram IA em pelo menos uma função — quem não o faz está a ficar para trás."
       }
     ]
   },
