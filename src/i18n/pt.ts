@@ -107,7 +107,7 @@ export const pt: Translations = {
       },
       {
         "label": "Crescimento",
-        "title": "Falar menos, fazer mais.",
+        "title": "Falar menos, fazer mais",
         "description": "Cada sistema que construo é desenhado para escalar. Os dados acumulam. As automações multiplicam. A sua vantagem cresce todos os meses."
       }
     ]
