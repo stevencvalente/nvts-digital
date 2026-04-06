@@ -137,6 +137,12 @@ export const fr: Translations = {
         "suffix": "%",
         "label": "Time-to-Market accéléré",
         "description": "Livraison accélérée en éliminant les outils redondants et en alignant les équipes sur des objectifs clairs."
+      },
+      {
+        "value": 72,
+        "suffix": "%",
+        "label": "Utilisent déjà l'IA",
+        "description": "Des entreprises ont adopté l'IA dans au moins une fonction — celles qui ne le font pas prennent du retard."
       }
     ]
   },

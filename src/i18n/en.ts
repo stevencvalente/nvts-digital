@@ -137,6 +137,12 @@ export const en: Translations = {
         "suffix": "%",
         "label": "Faster Time-to-Market",
         "description": "Accelerated delivery by cutting redundant tools and aligning teams around clear goals."
+      },
+      {
+        "value": 72,
+        "suffix": "%",
+        "label": "Already Using AI",
+        "description": "Of companies have adopted AI in at least one business function — those who don't are falling behind."
       }
     ]
   },
