@@ -34,7 +34,7 @@ const BoldStatement = () => {
         >
           {t.bold.line1}
           <br />
-          <span className="text-primary text-8xl">{t.bold.line2}</span>
+          <span className="text-primary text-[36px] md:text-[64px] lg:text-8xl">{t.bold.line2}</span>
         </motion.h2>
         <motion.p
           className="font-body text-lg md:text-xl text-background/60 max-w-[720px] leading-relaxed mb-4 whitespace-pre-line mx-auto px-0 text-center"
