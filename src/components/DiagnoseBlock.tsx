@@ -17,7 +17,7 @@ const DiagnoseBlock = () => {
   const allWords = [...words, ...highlightWords];
 
   return (
-    <section ref={containerRef} className="py-16 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24">
+    <section ref={containerRef} className="py-10 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24">
       <div className="max-w-[900px] mx-auto">
         {isMobile ? (
           <motion.p
