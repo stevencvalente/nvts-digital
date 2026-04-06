@@ -14,7 +14,7 @@ const ParallaxShowcase = () => {
   const [heightVh, setHeightVh] = useState((features.length + 1) * 100);
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
-    setHeightVh((features.length + (isMobile ? 0.5 : 1)) * 100);
+    setHeightVh((features.length + (isMobile ? 0.15 : 1)) * 100);
   }, [features.length]);
 
   return (
