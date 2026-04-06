@@ -107,7 +107,7 @@ export const fr: Translations = {
       },
       {
         "label": "Croissance",
-        "title": "Cumulez votre avantage.",
+        "title": "Grandissez plus, grandissez rapidement",
         "description": "Chaque système que je construis est conçu pour scaler. Les données s'accumulent. Les automatisations se multiplient. Votre avantage grandit chaque mois."
       }
     ]
