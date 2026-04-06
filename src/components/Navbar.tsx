@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useI18n, LOCALES } from "@/i18n";
+import logoImg from "@/assets/logo.png";
 
 const Navbar = () => {
   const { locale, t } = useI18n();
