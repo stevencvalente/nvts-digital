@@ -51,7 +51,7 @@ const ImpactNumbers = () => {
       </div>
 
       <motion.div className="max-w-6xl mx-auto relative z-10" style={{ opacity, y }}>
-        <h2 className="font-display text-center text-2xl md:text-4xl font-semibold text-background mb-4 tracking-tight">
+        <h2 className="font-display text-center text-3xl md:text-5xl lg:text-6xl font-semibold text-background mb-4 tracking-tight">
           {t.impact.heading}
         </h2>
         <p className="text-center text-background/60 text-base md:text-lg mb-16 md:mb-24 max-w-xl mx-auto">
@@ -68,7 +68,7 @@ const ImpactNumbers = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              <div className="font-display text-6xl md:text-7xl lg:text-8xl font-semibold text-primary mb-3 leading-none">
+              <div className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-3 leading-none">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="font-display text-lg md:text-xl font-semibold text-background mb-2">
