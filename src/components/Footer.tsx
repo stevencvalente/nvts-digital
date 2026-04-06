@@ -1,4 +1,5 @@
 import { useI18n } from "@/i18n";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const { t } = useI18n();
