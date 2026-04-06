@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useI18n } from "@/i18n";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ParallaxShowcase = () => {
   const { t } = useI18n();
+  const isMobile = useIsMobile();
   const features = t.parallax.features;
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -11,8 +13,10 @@ const ParallaxShowcase = () => {
     offset: ["start start", "end end"],
   });
 
+  const multiplier = isMobile ? 0.75 : 1;
+
   return (
-    <section ref={containerRef} className="relative" style={{ height: `${(features.length + 1) * 100}vh` }}>
+    <section ref={containerRef} className="relative" style={{ height: `${(features.length + multiplier) * 100}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden bg-foreground" style={{ overflowX: 'hidden' }}>
         <motion.div
           className="absolute inset-0 pointer-events-none"
