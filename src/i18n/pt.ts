@@ -68,7 +68,7 @@ export const pt: Translations = {
       {
         "title": "Transformação Digital",
         "tagline": "Fazer a transformação pegar de verdade.",
-        "description": "Simplifique o seu conjunto de ferramentas, redesenhe processos em torno de objetivos reais e garanta a adoção para que as iniciativas digitais não fiquem pelo caminho.",
+        "description": "Simplifique o seu conjunto de ferramentas, redefina processos em torno de objetivos reais e garanta a adoção para que as iniciativas digitais não fiquem pelo caminho.",
         "services": [
           "Estratégia",
           "Redesenho de Processos",
