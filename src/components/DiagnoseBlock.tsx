@@ -37,7 +37,7 @@ const DiagnoseBlock = () => {
 };
 
 const Word = ({ children, start, end, progress, highlight = false }: { children: string; start: number; end: number; progress: any; highlight?: boolean }) => {
-  const opacity = useTransform(progress, [start, end], [0.15, 1]);
+  const opacity = useTransform(progress, [start, end], [0.25, 1]);
   return (
     <motion.span style={{ opacity }} className={`inline-block mr-[0.3em] ${highlight ? "text-primary" : "text-foreground"}`}>
       {children}
