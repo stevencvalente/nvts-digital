@@ -38,7 +38,7 @@ const Navbar = () => {
     >
       <div className="flex items-center justify-between py-5">
         <a href={`/${locale}`}>
-          <img src={logo} alt="NVTS Digital" className="h-8 w-auto" />
+          <img src={logo} alt="NVTS Digital" className="h-12 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
