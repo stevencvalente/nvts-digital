@@ -43,6 +43,15 @@ const SpiralGalaxy = () => {
         const dy = (cy / h - 0.5) * 2;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
+        // Edge fade — smooth falloff on all 4 edges
+        const nx01 = col / (COLS - 1); // 0..1
+        const ny01 = row / (ROWS - 1); // 0..1
+        const fadeL = Math.min(1, nx01 * 4);       // left
+        const fadeR = Math.min(1, (1 - nx01) * 4); // right
+        const fadeT = Math.min(1, ny01 * 4);       // top
+        const fadeB = Math.min(1, (1 - ny01) * 4); // bottom
+        const edgeFadeAll = fadeL * fadeR * fadeT * fadeB;
+
         // Autonomous wave motion
         const wave1 = Math.sin(dist * 5 - t * 2.5) * 0.5 + 0.5;
         const wave2 = Math.cos(dist * 3 + t * 1.8) * 0.5 + 0.5;
