@@ -13,7 +13,7 @@ const Index = () => {
   useHeadMeta();
 
   return (
-    <div className="bg-background min-h-screen overflow-x-hidden">
+    <div className="bg-background min-h-screen">
     <Navbar />
     <HeroSection />
     <BoldStatement />

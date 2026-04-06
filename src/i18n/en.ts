@@ -50,7 +50,7 @@ export const en: Translations = {
           "E-Commerce"
         ],
         "problemQuote": "Our website looks outdated, we have no mobile app despite customers asking for one, and our e-commerce store converts at barely 1.2%.",
-        "whatIDo": "Design and build immersive, high-performance digital touchpoints from WebGL-powered brand experiences to conversion-optimised e-commerce and native-quality mobile apps."
+        "whatIDo": "Design and build immersive, high-performance digital touchpoints — from WebGL-powered brand experiences to conversion-optimised e-commerce and native-quality mobile apps."
       },
       {
         "title": "Growth & Acquisition",
@@ -63,7 +63,7 @@ export const en: Translations = {
           "Marketing Strategy"
         ],
         "problemQuote": "We spend heavily on ads but can't track what converts. Our CRM is a mess of duplicates, our SEO is non-existent, and every team has a different marketing strategy.",
-        "whatIDo": "Build a unified growth engine clean CRM foundation, a paid strategy built on real ROAS data, SEO that compounds over time and a coherent multi-channel plan."
+        "whatIDo": "Build a unified growth engine — clean CRM foundation, a paid strategy built on real ROAS data, SEO that compounds over time, and a coherent multi-channel plan."
       },
       {
         "title": "Digital Transformation",
@@ -76,12 +76,12 @@ export const en: Translations = {
           "Change Management"
         ],
         "problemQuote": "We have 12 tools that don't talk to each other, teams work in silos, and every digital initiative stalls halfway.",
-        "whatIDo": "Audit your full stack, eliminate redundancy, redesign processes around real business goals and drive adoption across teams so transformation actually sticks."
+        "whatIDo": "Audit your full stack, eliminate redundancy, redesign processes around real business goals, and drive adoption across teams — so transformation actually sticks."
       },
       {
         "title": "Artificial Intelligence",
         "tagline": "AI that delivers ROI, not hype.",
-        "description": "Identify the highest-impact AI use cases, automate repetitive work and deploy intelligent systems that run 24/7 and pay for themselves.",
+        "description": "Identify the highest-impact AI use cases, automate repetitive work, and deploy intelligent systems that run 24/7 and pay for themselves.",
         "services": [
           "Process Automation",
           "AI Chatbot",
@@ -98,7 +98,7 @@ export const en: Translations = {
       {
         "label": "Strategy",
         "title": "See the full picture.",
-        "description": "Most businesses optimize in silos. I map every touchpoint from first click to repeat purchase and find where value leaks out."
+        "description": "Most businesses optimize in silos. I map every touchpoint — from first click to repeat purchase — and find where value leaks out."
       },
       {
         "label": "Execution",

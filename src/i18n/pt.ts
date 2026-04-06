@@ -18,7 +18,7 @@ export const pt: Translations = {
   "bold": {
     "line1": "Eu não faço consultoria.",
     "line2": "Eu transformo.",
-    "subtitle": "A verdadeira mudança não vem de mais uma ferramenta ou de mais uma agência. \n\nVem de alguém que compreende o panorama completo dos seus dados e dos seus clientes, da sua tecnologia e os seus objetivos e que constrói uma estratégia que liga tudo isso. \n\nÉ isso que eu faço.\n"
+    "subtitle": "A verdadeira mudança não vem de mais uma ferramenta ou de mais uma agência. \n\nVem de alguém que compreende o panorama completo, dos seus dados aos seus clientes e da sua tecnologia aos seus objetivos e que constrói uma estratégia que liga tudo isso. \n\nÉ isso que eu faço."
   },
   "services": {
     "heading": "Cinco pilares. Uma visão.",
@@ -50,12 +50,12 @@ export const pt: Translations = {
           "E-Commerce"
         ],
         "problemQuote": "O nosso website parece desatualizado, não temos app móvel apesar dos clientes pedirem, e a nossa loja e-commerce converte apenas 1.2%.",
-        "whatIDo": "Crio experiências digitais imersivas e de alta performance desde websites com WebGL a lojas e-commerce otimizadas para conversão e apps móveis de qualidade nativa."
+        "whatIDo": "Crio experiências digitais imersivas e de alta performance — desde websites com WebGL a lojas e-commerce otimizadas para conversão e apps móveis de qualidade nativa."
       },
       {
         "title": "Crescimento & Aquisição",
         "tagline": "Estratégia full-funnel, do primeiro clique ao cliente fiel.",
-        "description": "Una CRM, publicidade paga, SEO e estratégia de marketing num único motor de crescimento que transforma investimento em receita real.",
+        "description": "Um CRM, publicidade paga, SEO e estratégia de marketing num único motor de crescimento que transforma investimento em receita real.",
         "services": [
           "CRM",
           "Campanhas Pagas",
@@ -63,12 +63,12 @@ export const pt: Translations = {
           "Estratégia de Marketing"
         ],
         "problemQuote": "Gastamos muito em anúncios mas não conseguimos rastrear o que converte. O nosso CRM é uma confusão de duplicados, o SEO é inexistente, e cada equipa tem uma estratégia de marketing diferente.",
-        "whatIDo": "Construo um motor de crescimento unificado, base de CRM limpa, uma estratégia paga baseada em dados reais de ROAS, SEO que acumula ao longo do tempo e um plano multicanal coerente."
+        "whatIDo": "Construo um motor de crescimento unificado — base de CRM limpa, uma estratégia paga baseada em dados reais de ROAS, SEO que acumula ao longo do tempo, e um plano multicanal coerente."
       },
       {
         "title": "Transformação Digital",
         "tagline": "Fazer a transformação pegar de verdade.",
-        "description": "Simplifique o seu conjunto de ferramentas, redesenhe processos em torno de objetivos reais e garanta a adoção para que as iniciativas digitais não fiquem pelo caminho.",
+        "description": "Simplifique o seu conjunto de ferramentas, redefina processos em torno de objetivos reais e garanta a adoção para que as iniciativas digitais não fiquem pelo caminho.",
         "services": [
           "Estratégia",
           "Redesenho de Processos",
@@ -102,12 +102,12 @@ export const pt: Translations = {
       },
       {
         "label": "Execução",
-        "title": "Menos conversa. Mais resultados.",
+        "title": "Lance o que importa.",
         "description": "Sem decks de 80 páginas. Construo, lanço e itero websites, automações, integrações em semanas, não em trimestres."
       },
       {
         "label": "Crescimento",
-        "title": "Crescer mais, melhor e mais rápido.",
+        "title": "Acumule a sua vantagem.",
         "description": "Cada sistema que construo é desenhado para escalar. Os dados acumulam. As automações multiplicam. A sua vantagem cresce todos os meses."
       }
     ]

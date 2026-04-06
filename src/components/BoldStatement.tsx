@@ -22,7 +22,7 @@ const BoldStatement = () => {
   const orbOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.2, 0.5, 0.5, 0.2]);
 
   return (
-    <section ref={containerRef} className="relative bg-foreground py-20 md:py-48 lg:py-56 px-6 overflow-hidden">
+    <section ref={containerRef} className="relative bg-foreground py-32 md:py-48 lg:py-56 px-6 overflow-hidden">
       <motion.div className="absolute inset-0 pointer-events-none" style={{ opacity: orbOpacity }}>
         <motion.div className="absolute w-[500px] h-[500px] rounded-full blur-[120px] bg-primary/30" style={{ x: orbX1, y: orbY1 }} />
         <motion.div className="absolute right-0 w-[350px] h-[350px] rounded-full blur-[100px] bg-accent/20" style={{ x: orbX2, y: orbY2 }} />
@@ -34,10 +34,10 @@ const BoldStatement = () => {
         >
           {t.bold.line1}
           <br />
-          <span className="text-primary text-[36px] md:text-[64px] lg:text-8xl">{t.bold.line2}</span>
+          <span className="text-primary text-8xl">{t.bold.line2}</span>
         </motion.h2>
         <motion.p
-          className="font-body text-lg md:text-xl text-background/60 max-w-[720px] leading-relaxed mb-4 whitespace-pre-line mx-auto px-0 text-center"
+          className="font-body text-lg md:text-xl text-background/60 max-w-[580px] leading-relaxed mb-4 whitespace-pre-line mx-auto px-0 text-center"
           style={{ y: subtitleY, opacity: subtitleOpacity }}
         >
           {t.bold.subtitle}

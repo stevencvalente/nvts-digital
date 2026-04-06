@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { useI18n } from "@/i18n";
 
 const ParallaxShowcase = () => {
@@ -11,15 +11,9 @@ const ParallaxShowcase = () => {
     offset: ["start start", "end end"],
   });
 
-  const [heightVh, setHeightVh] = useState((features.length + 1) * 100);
-  useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    setHeightVh((features.length + (isMobile ? 0.15 : 1)) * 100);
-  }, [features.length]);
-
   return (
-    <section ref={containerRef} className="relative" style={{ height: `${heightVh}vh` }}>
-      <div className="sticky top-0 h-screen overflow-hidden bg-foreground" style={{ overflowX: 'hidden' }}>
+    <section ref={containerRef} className="relative" style={{ height: `${(features.length + 1) * 100}vh` }}>
+      <div className="sticky top-0 h-screen overflow-hidden bg-foreground">
         <motion.div
           className="absolute inset-0 pointer-events-none"
           style={{ opacity: useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 0.6, 0.2]) }}
@@ -75,11 +69,11 @@ const FeatureCounter = ({ index, total, progress, start, end }: { index: number;
 
 const FeaturePanel = ({ feature, index, total, progress, segStart, segMid, segEnd }: { feature: { label: string; title: string; description: string }; index: number; total: number; progress: any; segStart: number; segMid: number; segEnd: number }) => {
   const isLast = index === total - 1;
-  const opacity = useTransform(progress, [segStart, segStart + 0.03, isLast ? 1 : segEnd - 0.03, isLast ? 1 : segEnd], [0, 1, 1, 0]);
-  const y = useTransform(progress, [segStart, segStart + 0.03, isLast ? 1 : segEnd - 0.03, isLast ? 1 : segEnd], [80, 0, 0, -80]);
-  const scale = useTransform(progress, [segStart, segStart + 0.04], [0.95, 1]);
-  const labelX = useTransform(progress, [segStart, segStart + 0.03], [-20, 0]);
-  const descY = useTransform(progress, [segStart, segStart + 0.05], [30, 0]);
+  const opacity = useTransform(progress, [segStart, segStart + 0.08, isLast ? 1 : segEnd - 0.08, isLast ? 1 : segEnd], [0, 1, 1, 0]);
+  const y = useTransform(progress, [segStart, segStart + 0.08, isLast ? 1 : segEnd - 0.08, isLast ? 1 : segEnd], [80, 0, 0, -80]);
+  const scale = useTransform(progress, [segStart, segMid], [0.95, 1]);
+  const labelX = useTransform(progress, [segStart, segStart + 0.06], [-20, 0]);
+  const descY = useTransform(progress, [segStart, segEnd], [30, -10]);
 
   return (
     <motion.div className="absolute inset-0 flex items-center justify-center px-6 md:px-16" style={{ opacity }}>
