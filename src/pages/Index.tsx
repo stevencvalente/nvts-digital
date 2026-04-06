@@ -4,6 +4,7 @@ import BoldStatement from "@/components/BoldStatement";
 import ServicesSection from "@/components/ServicesSection";
 import ParallaxShowcase from "@/components/ParallaxShowcase";
 import DiagnoseBlock from "@/components/DiagnoseBlock";
+import ImpactNumbers from "@/components/ImpactNumbers";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ const Index = () => {
     <ServicesSection />
     <ParallaxShowcase />
     <DiagnoseBlock />
+    <ImpactNumbers />
     <AboutSection />
     <ContactSection />
     <Footer />

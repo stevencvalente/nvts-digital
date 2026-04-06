@@ -116,6 +116,30 @@ export const en: Translations = {
     "paragraph": "Most businesses are sitting on untapped revenue buried in broken processes, disconnected tools and digital experiences that underperform.",
     "highlight": "I diagnose the full stack and build what actually moves the needle."
   },
+  "impact": {
+    "heading": "Faster. Better. Stronger.",
+    "subheading": "Measurable results across every engagement.",
+    "stats": [
+      {
+        "value": 40,
+        "suffix": "%",
+        "label": "Efficiency Gains",
+        "description": "Average reduction in operational friction through streamlined processes and smart automation."
+      },
+      {
+        "value": 3,
+        "suffix": "x",
+        "label": "ROI Multiplier",
+        "description": "Typical return on investment within the first 12 months of a full-stack transformation."
+      },
+      {
+        "value": 60,
+        "suffix": "%",
+        "label": "Faster Time-to-Market",
+        "description": "Accelerated delivery by cutting redundant tools and aligning teams around clear goals."
+      }
+    ]
+  },
   "about": {
     "label": "About",
     "heading": "One consultant. Full-stack expertise.",

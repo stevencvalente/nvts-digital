@@ -47,6 +47,16 @@ export interface Translations {
     paragraph: string;
     highlight: string;
   };
+  impact: {
+    heading: string;
+    subheading: string;
+    stats: {
+      value: number;
+      suffix: string;
+      label: string;
+      description: string;
+    }[];
+  };
   about: {
     label: string;
     heading: string;
