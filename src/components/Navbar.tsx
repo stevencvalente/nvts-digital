@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "@/assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -36,8 +37,8 @@ const Navbar = () => {
       }`}
     >
       <div className="flex items-center justify-between py-5">
-        <a href={`/${locale}`} className="font-display font-semibold text-base tracking-tight text-foreground">
-          NVTS DIGITAL
+        <a href={`/${locale}`}>
+          <img src={logo} alt="NVTS Digital" className="h-8 w-auto invert dark:invert-0" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
