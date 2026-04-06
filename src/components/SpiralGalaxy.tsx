@@ -83,9 +83,8 @@ const SpiralGalaxy = () => {
         const b = Math.round(PRIMARY_COLOR.b + (ACCENT_COLOR.b - PRIMARY_COLOR.b) * mix);
 
         // Opacity — always visible, pulsing
-        const edgeFade = 1 - Math.pow(dist, 2) * 0.3;
-        const alpha = Math.max(0.05, Math.min(0.7,
-          (0.25 + wave1 * 0.25 + wave2 * 0.15) * edgeFade
+        const alpha = Math.max(0, Math.min(0.7,
+          (0.25 + wave1 * 0.25 + wave2 * 0.15) * edgeFadeAll
         ));
 
         const nx = cx + distortX;
