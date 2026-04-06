@@ -97,12 +97,12 @@ export const fr: Translations = {
     "features": [
       {
         "label": "Stratégie",
-        "title": "Voyez le tableau complet.",
+        "title": "Voyez la vue d'ensemble.",
         "description": "La plupart des entreprises optimisent en silos. Je cartographie chaque point de contact du premier clic à l'achat récurrent et je trouve où la valeur s'échappe."
       },
       {
         "label": "Exécution",
-        "title": "Livrez ce qui compte.",
+        "title": "Moins de paroles. Plus de résultats.",
         "description": "Pas de decks de 80 pages. Je construis, lance et itère des sites, automatisations, intégrations en semaines, pas en trimestres."
       },
       {

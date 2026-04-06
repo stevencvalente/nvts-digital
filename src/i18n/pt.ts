@@ -102,7 +102,7 @@ export const pt: Translations = {
       },
       {
         "label": "Execução",
-        "title": "Lance o que importa.",
+        "title": "Menos conversa. Mais resultados.",
         "description": "Sem decks de 80 páginas. Construo, lanço e itero websites, automações, integrações em semanas, não em trimestres."
       },
       {
