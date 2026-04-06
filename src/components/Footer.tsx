@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border py-6 px-6 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-3 text-[13px] text-muted-foreground font-body">
-      <img src={logo} alt="NVTS Digital" className="h-6 w-auto" />
+      <img src={logo} alt="NVTS Digital" className="h-10 w-auto" />
       <div className="flex items-center gap-6">
         <span>© 2026</span>
         <a href="#services" className="hover:text-primary transition-colors duration-200">
