@@ -15,7 +15,7 @@ const DiagnoseBlock = () => {
   const allWords = [...words, ...highlightWords];
 
   return (
-    <section ref={containerRef} className="py-20 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24">
+    <section ref={containerRef} className="py-16 md:py-48 lg:py-56 px-6 md:px-16 lg:px-24">
       <div className="max-w-[900px] mx-auto">
         <p className="font-display text-[28px] md:text-[44px] lg:text-[56px] leading-[1.15] tracking-[-0.03em] font-semibold">
           {words.map((word, i) => {
