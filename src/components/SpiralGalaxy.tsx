@@ -90,8 +90,26 @@ const SpiralGalaxy = () => {
         const nx = cx + distortX;
         const ny = cy + distortY;
 
+        // Some dots glow — based on wave peaks
+        const glowIntensity = wave1 * wave2;
+        const isGlowing = glowIntensity > 0.45;
+
         nodes.push({ x: nx, y: ny, alpha, r, g, b, size });
 
+        // Draw glow halo first for glowing dots
+        if (isGlowing && alpha > 0.08) {
+          const glowRadius = size * 4;
+          const glowAlpha = alpha * glowIntensity * 0.5;
+          const gradient = ctx.createRadialGradient(nx, ny, 0, nx, ny, glowRadius);
+          gradient.addColorStop(0, `rgba(${r},${g},${b},${glowAlpha})`);
+          gradient.addColorStop(1, `rgba(${r},${g},${b},0)`);
+          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(nx, ny, glowRadius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Draw the dot
         ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
         ctx.beginPath();
         ctx.arc(nx, ny, Math.max(1, size), 0, Math.PI * 2);
