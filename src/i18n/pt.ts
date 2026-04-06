@@ -18,7 +18,7 @@ export const pt: Translations = {
   "bold": {
     "line1": "Eu não faço consultoria.",
     "line2": "Eu transformo.",
-    "subtitle": "A sua agência trata de uma coisa. O seu developer trata de outra. Entretanto, está a perder dinheiro."
+    "subtitle": "A verdadeira mudança não vem de mais uma ferramenta ou de mais uma agência. \n\nVem de alguém que compreende o panorama completo, dos seus dados aos seus clientes e da sua tecnologia aos seus objetivos e que constrói uma estratégia que liga tudo isso. \n\nÉ isso que eu faço."
   },
   "services": {
     "heading": "Cinco pilares. Uma visão.",
