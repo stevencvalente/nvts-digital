@@ -44,10 +44,10 @@ const ImpactNumbers = () => {
   const stats = t.impact.stats;
 
   return (
-    <section ref={containerRef} className="relative py-28 md:py-40 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section ref={containerRef} className="relative py-28 md:py-40 px-6 md:px-16 lg:px-24 overflow-hidden bg-foreground text-background">
       {/* Subtle background accent */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px] bg-primary/5" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px] bg-primary/10" />
       </div>
 
       <motion.div className="max-w-6xl mx-auto relative z-10" style={{ opacity, y }}>
