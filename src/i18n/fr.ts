@@ -116,6 +116,30 @@ export const fr: Translations = {
     "paragraph": "La plupart des entreprises ont des revenus à saisir, cachés dans des processus cassés, des outils déconnectés et des expériences digitales qui ne fonctionnent pas.",
     "highlight": "J'analyse l'ensemble du système et je construis ce qui fait vraiment la différence."
   },
+  "impact": {
+    "heading": "Plus rapide. Meilleur. Plus fort.",
+    "subheading": "Des résultats mesurables à chaque mission.",
+    "stats": [
+      {
+        "value": 40,
+        "suffix": "%",
+        "label": "Gains d'efficacité",
+        "description": "Réduction moyenne des frictions opérationnelles grâce à des processus simplifiés et une automatisation intelligente."
+      },
+      {
+        "value": 3,
+        "suffix": "x",
+        "label": "Multiplicateur de ROI",
+        "description": "Retour sur investissement typique dans les 12 premiers mois d'une transformation full-stack."
+      },
+      {
+        "value": 60,
+        "suffix": "%",
+        "label": "Time-to-Market accéléré",
+        "description": "Livraison accélérée en éliminant les outils redondants et en alignant les équipes sur des objectifs clairs."
+      }
+    ]
+  },
   "about": {
     "label": "À propos",
     "heading": "Un consultant. Expertise full-stack.",

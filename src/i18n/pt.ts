@@ -116,6 +116,30 @@ export const pt: Translations = {
     "paragraph": "A maioria das empresas tem receita por capturar, perdida em processos quebrados, ferramentas desligadas e experiências digitais que não funcionam.",
     "highlight": "Eu analiso todo o sistema e construo o que realmente faz a diferença."
   },
+  "impact": {
+    "heading": "Mais rápido. Melhor. Mais forte.",
+    "subheading": "Resultados mensuráveis em cada projeto.",
+    "stats": [
+      {
+        "value": 40,
+        "suffix": "%",
+        "label": "Ganhos de eficiência",
+        "description": "Redução média de fricção operacional através de processos otimizados e automação inteligente."
+      },
+      {
+        "value": 3,
+        "suffix": "x",
+        "label": "Multiplicador de ROI",
+        "description": "Retorno típico sobre o investimento nos primeiros 12 meses de uma transformação full-stack."
+      },
+      {
+        "value": 60,
+        "suffix": "%",
+        "label": "Time-to-Market mais rápido",
+        "description": "Entrega acelerada ao eliminar ferramentas redundantes e alinhar equipas em torno de objetivos claros."
+      }
+    ]
+  },
   "about": {
     "label": "Sobre",
     "heading": "Um consultor. Expertise full-stack.",
