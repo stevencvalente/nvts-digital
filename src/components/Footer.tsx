@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border py-6 px-6 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-3 text-[13px] text-muted-foreground font-body">
       <a href="#" className="flex items-center">
-        <img src={logoImg} alt="NVTS DIGITAL" className="h-6 w-auto invert dark:invert-0" />
+        <img src={logoImg} alt="NVTS DIGITAL" className="h-6 w-auto" />
       </a>
       <div className="flex items-center gap-6">
         <span>© 2026</span>
