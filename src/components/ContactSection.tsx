@@ -155,6 +155,7 @@ const ContactSection = () => {
                     {p.title}
                   </option>
                 ))}
+                <option value="Multiple ones">{t.contact.pillarMultiple}</option>
               </select>
               {errors.pillar && <p className="text-destructive text-xs font-body mt-1.5">{errors.pillar}</p>}
             </div>
