@@ -22,6 +22,7 @@ const HeroSection = () => {
     <section
       ref={sectionRef}
       className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden"
+      style={{ willChange: "transform", transform: "translateZ(0)" }}
     >
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -47,6 +48,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="font-display font-semibold text-[42px] md:text-[80px] leading-[1.05] tracking-tight text-foreground mb-8"
+          style={{ willChange: "transform, opacity" }}
         >
           {t.hero.line1}
           <br />
@@ -60,6 +62,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground text-lg font-body max-w-[440px] mb-12 leading-relaxed"
+          style={{ willChange: "transform, opacity" }}
         >
           {t.hero.description}
         </motion.p>
@@ -69,6 +72,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-4"
+          style={{ willChange: "transform, opacity" }}
         >
           <a
             href="#services"
