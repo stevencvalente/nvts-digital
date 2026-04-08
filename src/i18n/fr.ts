@@ -162,6 +162,7 @@ export const fr: Translations = {
     "namePlaceholder": "Nom",
     "emailPlaceholder": "Email",
     "pillarPlaceholder": "Pilier d'intérêt",
+    "pillarMultiple": "Plusieurs",
     "messagePlaceholder": "Message",
     "sendButton": "Envoyer le Message",
     "sendingButton": "Envoi en cours...",

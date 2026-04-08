@@ -69,6 +69,7 @@ export interface Translations {
     namePlaceholder: string;
     emailPlaceholder: string;
     pillarPlaceholder: string;
+    pillarMultiple: string;
     messagePlaceholder: string;
     sendButton: string;
     sendingButton: string;

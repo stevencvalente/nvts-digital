@@ -162,6 +162,7 @@ export const en: Translations = {
     "namePlaceholder": "Name",
     "emailPlaceholder": "Email",
     "pillarPlaceholder": "Pillar of interest",
+    "pillarMultiple": "Multiple ones",
     "messagePlaceholder": "Message",
     "sendButton": "Send Message",
     "sendingButton": "Sending...",
