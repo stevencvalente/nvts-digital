@@ -5,19 +5,19 @@ const SITE_URL = "https://nvtsdigital.com";
 
 const seoData: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: "NVTS Digital — One Expert. Five Pillars. Zero Gaps.",
+    title: "NVTS Digital — SEO, AI, Ecommerce & Digital Transformation Expert",
     description:
-      "I help ambitious companies generate more revenue, reduce operational friction and build digital experiences that actually perform across every layer of the stack.",
+      "Expert digital consulting: SEO, SEA, PIM, DAM, Digital Marketing, Paid Campaigns, Ecommerce, CRM, AI, UX/UI, WebGL, WebGPU, Mobile Apps, Workflows & ROI-driven Growth.",
   },
   pt: {
-    title: "NVTS Digital — Um Especialista. Cinco Pilares. Zero Lacunas.",
+    title: "NVTS Digital — SEO, IA, Ecommerce & Transformação Digital",
     description:
-      "Ajudo empresas ambiciosas a gerar mais receita, reduzir fricção operacional e construir experiências digitais que realmente funcionam em todas as camadas do stack.",
+      "Consultoria digital especializada: SEO, SEA, PIM, DAM, Marketing Digital, Campanhas Pagas, Ecommerce, CRM, IA, UX/UI, WebGL, WebGPU, Apps Mobile, Workflows & Crescimento orientado a ROI.",
   },
   fr: {
-    title: "NVTS Digital — Un Expert. Cinq Piliers. Zéro Lacune.",
+    title: "NVTS Digital — SEO, IA, Ecommerce & Transformation Digitale",
     description:
-      "J'aide les entreprises ambitieuses à générer plus de revenus, réduire les frictions opérationnelles et construire des expériences digitales qui performent réellement.",
+      "Consulting digital expert : SEO, SEA, PIM, DAM, Marketing Digital, Campagnes Payantes, Ecommerce, CRM, IA, UX/UI, WebGL, WebGPU, Apps Mobiles, Workflows & Croissance orientée ROI.",
   },
 };
 
@@ -93,11 +93,11 @@ const useHeadMeta = () => {
       },
       sameAs: [],
       knowsAbout: [
-        "Digital Transformation",
-        "Data & Content Intelligence",
-        "E-Commerce",
-        "Growth & Acquisition",
-        "Artificial Intelligence",
+        "SEO", "SEA", "PIM", "DAM", "Digital Marketing", "Paid Campaigns",
+        "Website Development", "Mobile Apps", "Workflows", "ROI",
+        "Growth & Acquisition", "WebGL", "WebGPU", "Immersive Experiences",
+        "UX/UI Design", "Ecommerce", "CRM", "Artificial Intelligence",
+        "Digital Transformation", "Data & Content Intelligence",
       ],
     });
   }, [locale]);
