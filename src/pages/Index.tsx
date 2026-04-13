@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import useHeadMeta from "@/hooks/useHeadMeta";
 
 const BoldStatement = lazy(() => import("@/components/BoldStatement"));
+const BeforeAfterSlider = lazy(() => import("@/components/BeforeAfterSlider"));
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const ParallaxShowcase = lazy(() => import("@/components/ParallaxShowcase"));
 const DiagnoseBlock = lazy(() => import("@/components/DiagnoseBlock"));
@@ -21,6 +22,7 @@ const Index = () => {
     <HeroSection />
     <Suspense fallback={null}>
       <BoldStatement />
+      <BeforeAfterSlider />
       <ServicesSection />
       <ParallaxShowcase />
       <DiagnoseBlock />
