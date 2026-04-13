@@ -22,9 +22,9 @@ const Index = () => {
     <HeroSection />
     <Suspense fallback={null}>
       <BoldStatement />
-      <BeforeAfterSlider />
       <ServicesSection />
       <ParallaxShowcase />
+      <BeforeAfterSlider />
       <DiagnoseBlock />
       <ImpactNumbers />
       <AboutSection />
