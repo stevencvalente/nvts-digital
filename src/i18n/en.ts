@@ -180,6 +180,12 @@ export const en: Translations = {
       "messageMax": "Message must be under 2000 characters"
     }
   },
+  "beforeAfter": {
+    "heading": "From chaos to clarity.",
+    "subheading": "Drag the slider to see the transformation.",
+    "beforeLabel": "Before",
+    "afterLabel": "After"
+  },
   "footer": {
     "brand": "NVTS Digital"
   }
