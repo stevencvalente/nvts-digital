@@ -87,6 +87,12 @@ export interface Translations {
       messageMax: string;
     };
   };
+  beforeAfter: {
+    heading: string;
+    subheading: string;
+    beforeLabel: string;
+    afterLabel: string;
+  };
   footer: {
     brand: string;
   };
