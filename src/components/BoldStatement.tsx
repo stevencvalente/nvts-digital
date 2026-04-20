@@ -22,7 +22,7 @@ const BoldStatement = () => {
   const orbOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.2, 0.5, 0.5, 0.2]);
 
   return (
-    <section ref={containerRef} className="relative bg-foreground py-32 md:py-48 lg:py-56 px-6 overflow-hidden">
+    <section ref={containerRef} className="relative bg-foreground py-20 md:py-28 lg:py-32 px-6 overflow-hidden">
       <motion.div className="absolute inset-0 pointer-events-none" style={{ opacity: orbOpacity }}>
         <motion.div className="absolute w-[500px] h-[500px] rounded-full blur-[120px] bg-primary/30" style={{ x: orbX1, y: orbY1 }} />
         <motion.div className="absolute right-0 w-[350px] h-[350px] rounded-full blur-[100px] bg-accent/20" style={{ x: orbX2, y: orbY2 }} />
