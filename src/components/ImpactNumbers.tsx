@@ -51,10 +51,10 @@ const ImpactNumbers = () => {
       </div>
 
       <motion.div className="max-w-6xl mx-auto relative z-10" style={{ opacity, y }}>
-        <h2 className="font-display text-center text-3xl md:text-5xl lg:text-6xl font-semibold text-background mb-4 tracking-tight">
+        <h2 className="font-display text-center text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-4 tracking-tight">
           {t.impact.heading}
         </h2>
-        <p className="text-center text-background/60 text-base md:text-lg mb-16 md:mb-24 max-w-xl mx-auto">
+        <p className="text-center text-muted-foreground text-base md:text-lg mb-16 md:mb-24 max-w-xl mx-auto">
           {t.impact.subheading}
         </p>
 
@@ -71,10 +71,10 @@ const ImpactNumbers = () => {
               <div className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-3 leading-none">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="font-display text-lg md:text-xl font-semibold text-background mb-2">
+              <div className="font-display text-lg md:text-xl font-semibold text-foreground mb-2">
                 {stat.label}
               </div>
-              <p className="text-background/50 text-sm md:text-base max-w-[280px] mx-auto leading-relaxed">
+              <p className="text-muted-foreground text-sm md:text-base max-w-[280px] mx-auto leading-relaxed">
                 {stat.description}
               </p>
             </motion.div>
