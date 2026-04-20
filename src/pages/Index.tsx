@@ -22,7 +22,7 @@ const Index = () => {
     <HeroSection />
     <Suspense fallback={null}>
       <BoldStatement />
-      <div className="bg-gradient-to-b from-[hsl(221_70%_12%)] via-[hsl(221_55%_35%)] to-background">
+      <div className="bg-gradient-to-b from-foreground via-foreground to-background">
         <ImpactNumbers />
         <ServicesSection />
       </div>
