@@ -44,17 +44,17 @@ const ImpactNumbers = () => {
   const stats = t.impact.stats;
 
   return (
-    <section ref={containerRef} className="relative py-28 md:py-40 px-6 md:px-16 lg:px-24 overflow-hidden bg-foreground text-background">
+    <section ref={containerRef} className="relative py-28 md:py-40 px-6 md:px-16 lg:px-24 overflow-hidden bg-background text-foreground">
       {/* Subtle background accent */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px] bg-primary/10" />
       </div>
 
       <motion.div className="max-w-6xl mx-auto relative z-10" style={{ opacity, y }}>
-        <h2 className="font-display text-center text-3xl md:text-5xl lg:text-6xl font-semibold text-background mb-4 tracking-tight">
+        <h2 className="font-display text-center text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-4 tracking-tight">
           {t.impact.heading}
         </h2>
-        <p className="text-center text-background/60 text-base md:text-lg mb-16 md:mb-24 max-w-xl mx-auto">
+        <p className="text-center text-muted-foreground text-base md:text-lg mb-16 md:mb-24 max-w-xl mx-auto">
           {t.impact.subheading}
         </p>
 
@@ -71,10 +71,10 @@ const ImpactNumbers = () => {
               <div className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-3 leading-none">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="font-display text-lg md:text-xl font-semibold text-background mb-2">
+              <div className="font-display text-lg md:text-xl font-semibold text-foreground mb-2">
                 {stat.label}
               </div>
-              <p className="text-background/50 text-sm md:text-base max-w-[280px] mx-auto leading-relaxed">
+              <p className="text-muted-foreground text-sm md:text-base max-w-[280px] mx-auto leading-relaxed">
                 {stat.description}
               </p>
             </motion.div>
