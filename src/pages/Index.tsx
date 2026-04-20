@@ -22,10 +22,8 @@ const Index = () => {
     <HeroSection />
     <Suspense fallback={null}>
       <BoldStatement />
-      <div className="bg-gradient-to-b from-background from-0% via-foreground via-70% to-foreground to-100%">
-        <ImpactNumbers />
-        <ServicesSection />
-      </div>
+      <ImpactNumbers />
+      <ServicesSection />
       <ParallaxShowcase />
       <BeforeAfterSlider />
       <DiagnoseBlock />

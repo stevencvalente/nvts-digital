@@ -44,7 +44,7 @@ const ServicesSection = () => {
 
   return (
     <>
-      <section id="services" className="py-24 md:py-32 px-6 md:px-16 lg:px-24 bg-transparent">
+      <section id="services" className="py-24 md:py-32 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
