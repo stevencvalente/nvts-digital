@@ -67,36 +67,36 @@ const ServicesSection = () => {
                 const isActive = current === i;
                 const Icon = icons[i];
                 return (
-                  <CarouselItem key={i} className="pl-4 basis-[80%] sm:basis-[55%] md:basis-[38%] lg:basis-[32%]">
+                  <CarouselItem key={i} className="pl-4 basis-[88%] sm:basis-[70%] md:basis-[55%] lg:basis-[46%]">
                     <div
                       onClick={() => isActive ? setSelectedIndex(i) : api?.scrollTo(i)}
                       className={`relative flex flex-col rounded-2xl border bg-card overflow-hidden cursor-pointer transition-all duration-500 ${
                         isActive ? "border-primary/40 scale-100 opacity-100 shadow-lg" : "border-border scale-[0.93] opacity-50"
                       }`}
-                      style={{ minHeight: "420px" }}
+                      style={{ minHeight: "540px" }}
                     >
-                      <div className="flex flex-col flex-1 p-8">
-                        <div className="flex items-center justify-between mb-6">
-                          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                            <Icon className="w-5 h-5 text-primary" />
+                      <div className="flex flex-col flex-1 p-10 md:p-12">
+                        <div className="flex items-center justify-between mb-8">
+                          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                            <Icon className="w-6 h-6 text-primary" />
                           </div>
-                          <span className="font-display font-semibold text-sm text-muted-foreground">{numbers[i]}</span>
+                          <span className="font-display font-semibold text-base text-muted-foreground">{numbers[i]}</span>
                         </div>
-                        <h3 className="font-display font-semibold text-xl md:text-2xl tracking-tight text-foreground mb-2 leading-tight">
+                        <h3 className="font-display font-semibold text-2xl md:text-3xl tracking-tight text-foreground mb-3 leading-tight">
                           {pillar.title}
                         </h3>
-                        <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">{pillar.tagline}</p>
-                        <p className="text-muted-foreground/80 text-xs font-body leading-relaxed mb-6">{pillar.description}</p>
-                        <ul className="mt-auto flex flex-col gap-1.5 mb-2">
+                        <p className="text-muted-foreground text-base font-body leading-relaxed mb-5">{pillar.tagline}</p>
+                        <p className="text-muted-foreground/80 text-sm font-body leading-relaxed mb-8">{pillar.description}</p>
+                        <ul className="mt-auto flex flex-col gap-2 mb-2">
                           {pillar.services.map((svc) => (
-                            <li key={svc} className="flex items-center gap-2 text-xs font-body text-muted-foreground">
+                            <li key={svc} className="flex items-center gap-2.5 text-sm font-body text-muted-foreground">
                               <span className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
                               {svc}
                             </li>
                           ))}
                         </ul>
                         {isActive && (
-                          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 inline-block bg-primary text-primary-foreground font-display font-medium text-sm px-6 py-2.5 rounded-full">
+                          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 inline-block bg-primary text-primary-foreground font-display font-medium text-sm px-6 py-2.5 rounded-full self-start">
                             {t.services.clickToExplore}
                           </motion.span>
                         )}
