@@ -44,7 +44,7 @@ const ImpactNumbers = () => {
   const stats = t.impact.stats;
 
   return (
-    <section ref={containerRef} className="relative py-28 md:py-40 px-6 md:px-16 lg:px-24 overflow-hidden text-background">
+    <section ref={containerRef} className="relative pt-0 pb-28 md:pb-40 px-6 md:px-16 lg:px-24 overflow-hidden bg-foreground text-background -mt-32 md:-mt-48 lg:-mt-56 pt-32 md:pt-48 lg:pt-56">
       {/* Subtle background accent */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px] bg-primary/10" />
