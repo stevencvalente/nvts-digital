@@ -22,11 +22,13 @@ const Index = () => {
     <HeroSection />
     <Suspense fallback={null}>
       <BoldStatement />
-      <ServicesSection />
+      <div className="bg-gradient-to-b from-[hsl(221_70%_12%)] via-[hsl(221_55%_35%)] to-background">
+        <ImpactNumbers />
+        <ServicesSection />
+      </div>
       <ParallaxShowcase />
       <BeforeAfterSlider />
       <DiagnoseBlock />
-      <ImpactNumbers />
       <AboutSection />
       <ContactSection />
       <Footer />
